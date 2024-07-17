@@ -9,4 +9,12 @@ public class Level2 : MonoBehaviour
     {
         SceneManager.LoadSceneAsync("MainMenu");
     }
+
+    public void levelPassed() 
+    {   
+        if (PlayerPrefs.GetInt("Unlocked Level", 1) == 2) {
+            PlayerPrefs.SetInt("Unlocked Level", 3);
+            PlayerPrefs.Save();
+        }
+    }
 }

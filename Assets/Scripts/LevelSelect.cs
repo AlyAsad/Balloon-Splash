@@ -5,6 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class LevelSelect : MonoBehaviour
 {
+
+    void Start()
+    {
+        //if (PlayerPrefs.GetInt("Unlocked Level", 1) == 1)
+    }
+
+
+
+
     public void BackToMenu()
     {
         SceneManager.LoadSceneAsync("MainMenu");
