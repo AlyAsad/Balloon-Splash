@@ -2,13 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class LevelSelect : MonoBehaviour
 {
 
+    public GameObject level2Button;
+
     void Start()
-    {
-        //if (PlayerPrefs.GetInt("Unlocked Level", 1) == 1)
+    {   
+
+        // each case statement should fall through to the next one
+        switch (PlayerPrefs.GetInt("Unlocked Level", 1)) {
+
+            case 1:
+                level2Button.GetComponent<Button>().interactable = false;
+                goto default;
+                
+            default:
+                break;
+
+        }
     }
 
 
