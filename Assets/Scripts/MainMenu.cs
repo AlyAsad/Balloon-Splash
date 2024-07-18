@@ -42,5 +42,10 @@ public class MainMenu : MonoBehaviour
         PlayerPrefs.SetInt("Unlocked Level", 1);
         PlayerPrefs.Save();
     }
+
+    public void GoToSandbox()
+    {
+        SceneManager.LoadSceneAsync("Level Design");
+    }
 }
 
