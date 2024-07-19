@@ -7,13 +7,16 @@ public class ThrowingBalloon : MonoBehaviour
 {
     public Transform throwPoint;
     public GameObject balloonPrefab;
-    [SerializeField] float power = 10f;
-    [SerializeField] float maxDrag = 5f;
     public float ballonForce = 20f;
-
-    [SerializeField] LineRenderer lr;
     Vector3 dragStartPos;
     Touch touch;
+
+    [SerializeField] float power = 10f;
+    [SerializeField] float maxDrag = 5f;
+    [SerializeField] float recoilPercent = 0.2f;
+
+    [SerializeField] LineRenderer lr;
+    [SerializeField] Rigidbody2D PlayerRigidBody;
 
     // Update is called once per frame
     private void Update()
@@ -40,14 +43,6 @@ public class ThrowingBalloon : MonoBehaviour
         }
 
     }
-    /*
-    void Shoot()
-    {
-        GameObject balloon = Instantiate(balloonPrefab, throwPoint.position, throwPoint.rotation);
-        Rigidbody2D rb = balloon.GetComponent<Rigidbody2D>();
-
-        rb.AddForce(throwPoint.up * ballonForce, ForceMode2D.Impulse);
-    }*/
 
     void DragStart()
     {
@@ -76,6 +71,12 @@ public class ThrowingBalloon : MonoBehaviour
         GameObject balloon = Instantiate(balloonPrefab, throwPoint.position, throwPoint.rotation);
         Rigidbody2D rb = balloon.GetComponent<Rigidbody2D>();
 
+        Vector3 playerClampedForce;
+        playerClampedForce.x = -1 * clampedForce.x * recoilPercent;
+        playerClampedForce.y = -1 * clampedForce.y * recoilPercent;
+        playerClampedForce.z = -1 * clampedForce.z * recoilPercent;
+
+        PlayerRigidBody.AddForce(playerClampedForce, ForceMode2D.Impulse);
         rb.AddForce(clampedForce, ForceMode2D.Impulse);
     }
 

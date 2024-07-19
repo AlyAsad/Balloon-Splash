@@ -1685,10 +1685,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   throwPoint: {fileID: 7123957}
   balloonPrefab: {fileID: 3924599004871305105, guid: 64fbc9bd65437d248afe7cad616f8f4b, type: 3}
+  ballonForce: 20
   power: 10
   maxDrag: 5
-  ballonForce: 20
+  recoilPercent: 0.2
   lr: {fileID: 1712206766}
+  PlayerRigidBody: {fileID: 1712206762}
 --- !u!120 &1712206766
 LineRenderer:
   serializedVersion: 2
@@ -1832,7 +1834,7 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.21133333}
+  m_Offset: {x: 0, y: -0.01}
   serializedVersion: 2
   m_Radius: 0.5
 --- !u!1 &1862321496
