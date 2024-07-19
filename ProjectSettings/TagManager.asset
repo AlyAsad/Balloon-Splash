@@ -12,11 +12,11 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player and enemies
   - Water
   - UI
-  - 
-  - 
+  - Balloons
+  - Boundaries
   - 
   - 
   - 

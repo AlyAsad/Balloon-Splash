@@ -17,7 +17,7 @@ public class PlayerBalloonCollision : MonoBehaviour
 
 
         if (other.gameObject.CompareTag("Enemy_Balloon"))
-            Destroy(gameObject); ;
+            Destroy(gameObject);
     }
 }
 
