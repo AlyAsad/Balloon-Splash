@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerBalloonCollision : MonoBehaviour
 {
-    [SerializeField] EnemyAi enemy;
+    private EnemyAi enemy;
     [SerializeField] float damage = 2f;
 
     [SerializeField] public int maxWallBounce = 2;
@@ -15,12 +15,15 @@ public class PlayerBalloonCollision : MonoBehaviour
     private void Start()
     {
         Destroy(gameObject, BallonExplosionTime);
+        enemy = GameObject.FindWithTag("Enemy").GetComponent<EnemyAi>();
     }
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
-            //enemy.TakeDamage(damage);
+            //GetComponent<EnemyAi>().TakeDamage(damage);
+            enemy.TakeDamage(damage);
+            
             Destroy(gameObject);
         }
 
