@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyAi : MonoBehaviour
 {
     private Vector3 startingPosition;
-    [SerializeField] float health, maxHealth = 10f;
+    [SerializeField] float health = 10f, maxHealth = 10f;
     [SerializeField] EnemyHealthBar healthBar;
 
     private void Awake()

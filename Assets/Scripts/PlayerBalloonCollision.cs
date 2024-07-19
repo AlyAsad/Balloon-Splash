@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class PlayerBalloonCollision : MonoBehaviour
 {
-    [SerializeField] EnemyAi enemy;
+    //[SerializeField] EnemyAi enemy;
     [SerializeField] float damage = 2f;
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
-            enemy.TakeDamage(damage);
+            //enemy.TakeDamage(damage);
             Destroy(gameObject);
         }
             
