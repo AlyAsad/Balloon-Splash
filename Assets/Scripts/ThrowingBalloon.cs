@@ -17,6 +17,7 @@ public class ThrowingBalloon : MonoBehaviour
 
     [SerializeField] LineRenderer lr;
     [SerializeField] Rigidbody2D PlayerRigidBody;
+    
 
     // Update is called once per frame
     private void Update()

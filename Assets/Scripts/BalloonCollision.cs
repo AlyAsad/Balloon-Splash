@@ -1,0 +1,70 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class BalloonCollision : MonoBehaviour
+{
+    [SerializeField] private float enemyDamage = 2f;
+    [SerializeField] private float playerDamage = 1f;
+    [SerializeField] private int maxWallBounce = 2;
+    [SerializeField] private float balloonExplosionTime = 10;
+
+    private int numOfCollisions = 0;
+    private EnemyAi enemy;
+    private Player player;
+
+    private void Start()
+    {
+        Destroy(gameObject, balloonExplosionTime);
+        enemy = GameObject.FindWithTag("Enemy").GetComponent<EnemyAi>();
+        player = GameObject.FindWithTag("Player").GetComponent<Player>();
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (gameObject.CompareTag("PlayerBalloon"))
+        {
+            HandlePlayerBalloonCollision(other);
+        }
+        else if (gameObject.CompareTag("EnemyBalloon"))
+        {
+            HandleEnemyBalloonCollision(other);
+        }
+
+        if (other.gameObject.CompareTag("Wall"))
+        {
+            if (numOfCollisions == maxWallBounce)
+                Destroy(gameObject);
+            else
+                numOfCollisions++;
+        }
+    }
+
+    private void HandlePlayerBalloonCollision(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            enemy.TakeDamage(enemyDamage);
+            Destroy(gameObject);
+        }
+        else if (other.gameObject.CompareTag("EnemyBalloon"))
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    private void HandleEnemyBalloonCollision(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            player.TakeDamage(playerDamage);
+            Destroy(gameObject);
+        }
+        else if (other.gameObject.CompareTag("PlayerBalloon"))
+        {
+            Destroy(gameObject);
+        }
+    }
+}
+
+

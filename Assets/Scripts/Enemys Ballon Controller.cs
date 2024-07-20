@@ -1,66 +1,50 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyBallonController : MonoBehaviour
+public class EnemyBalloonController : MonoBehaviour
 {
-    [SerializeField] float power = 10f;
-    [SerializeField] float maxDrag = 5f;
-    [SerializeField] Rigidbody2D rb;
-    [SerializeField] LineRenderer lr;
+    [SerializeField] private float power = 10f;
+    [SerializeField] private float maxDrag = 5f;
+    [SerializeField] private float recoilPercent = 0.2f;
+    [SerializeField] private Transform throwPoint;
+    [SerializeField] private GameObject enemyBalloonPrefab; // Enemy balloon prefab
+    [SerializeField] private Rigidbody2D enemyRb;
 
-    Vector3 dragStartPos;
-    Touch touch;
+    private Transform player;
 
-    private void Update()
+    private void Start()
     {
-        if (Input.touchCount > 0)
+        player = GameObject.FindWithTag("Player").transform;
+        StartCoroutine(ThrowBalloonAtRandomIntervals());
+    }
+
+    private IEnumerator ThrowBalloonAtRandomIntervals()
+    {
+        while (true)
         {
-            touch = Input.GetTouch(0);
-
-            if (touch.phase == TouchPhase.Began)
-            {
-                DragStart();
-            }
-
-            if (touch.phase == TouchPhase.Moved)
-            {
-                Dragging();
-            }
-
-            if (touch.phase == TouchPhase.Ended)
-            {
-                DragRelease();
-            }
-
+            yield return new WaitForSeconds(Random.Range(2f, 5f)); // Random interval between throws
+            ThrowBalloon();
         }
     }
 
-    void DragStart()
+    private void ThrowBalloon()
     {
-        dragStartPos = Camera.main.ScreenToWorldPoint(touch.position);
-        dragStartPos.z = 0f;
-        lr.positionCount = 1;
-        lr.SetPosition(0, dragStartPos);
-    }
-    void Dragging()
-    {
-        Vector3 draggingPos = Camera.main.ScreenToWorldPoint(touch.position);
-        draggingPos.z = 0f;
-        lr.positionCount = 2;
-        lr.SetPosition(1, draggingPos);
-    }
-    void DragRelease()
-    {
-        lr.positionCount = 0;
+        if (player == null) return;
 
-        Vector3 dragReleasePos = Camera.main.ScreenToWorldPoint(touch.position);
-        dragReleasePos.z = 0f;
+        // Calculate the force to throw the balloon from the enemy towards the player
+        Vector3 throwDirection = (player.position - throwPoint.position).normalized;
+        Vector3 clampedForce = throwDirection * maxDrag * power;
 
-        Vector3 force = dragStartPos - dragReleasePos;
-        Vector3 clampedForce = Vector3.ClampMagnitude(force, maxDrag) * power;
-
+        // Instantiate and throw the balloon
+        GameObject balloon = Instantiate(enemyBalloonPrefab, throwPoint.position, throwPoint.rotation);
+        Rigidbody2D rb = balloon.GetComponent<Rigidbody2D>();
         rb.AddForce(clampedForce, ForceMode2D.Impulse);
-    }
 
+        // Apply recoil to the enemy
+        Vector3 recoilForce = -clampedForce * recoilPercent;
+        enemyRb.AddForce(recoilForce, ForceMode2D.Impulse);
+
+        // Destroy the balloon after a certain time
+        Destroy(balloon, 5f); // Adjust time as needed
+    }
 }
