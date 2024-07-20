@@ -22,11 +22,11 @@ public class BalloonCollision : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (gameObject.CompareTag("PlayerBalloon"))
+        if (gameObject.CompareTag("Player_Balloon"))
         {
             HandlePlayerBalloonCollision(other);
         }
-        else if (gameObject.CompareTag("EnemyBalloon"))
+        else if (gameObject.CompareTag("Enemy_Balloon"))
         {
             HandleEnemyBalloonCollision(other);
         }
@@ -47,7 +47,7 @@ public class BalloonCollision : MonoBehaviour
             enemy.TakeDamage(enemyDamage);
             Destroy(gameObject);
         }
-        else if (other.gameObject.CompareTag("EnemyBalloon"))
+        else if (other.gameObject.CompareTag("Enemy_Balloon"))
         {
             Destroy(gameObject);
         }
@@ -60,7 +60,7 @@ public class BalloonCollision : MonoBehaviour
             player.TakeDamage(playerDamage);
             Destroy(gameObject);
         }
-        else if (other.gameObject.CompareTag("PlayerBalloon"))
+        else if (other.gameObject.CompareTag("Player_Balloon"))
         {
             Destroy(gameObject);
         }

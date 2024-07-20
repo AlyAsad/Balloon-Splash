@@ -7,7 +7,7 @@ public class EnemyBalloonController : MonoBehaviour
     [SerializeField] private float maxDrag = 5f;
     [SerializeField] private float recoilPercent = 0.2f;
     [SerializeField] private Transform throwPoint;
-    [SerializeField] private GameObject enemyBalloonPrefab; // Enemy balloon prefab
+    [SerializeField] private GameObject enemyBalloonPrefab; 
     [SerializeField] private Rigidbody2D enemyRb;
 
     private Transform player;
