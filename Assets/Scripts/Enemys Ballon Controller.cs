@@ -9,6 +9,8 @@ public class EnemyBalloonController : MonoBehaviour
     [SerializeField] private Transform throwPoint;
     [SerializeField] private GameObject enemyBalloonPrefab; 
     [SerializeField] private Rigidbody2D enemyRb;
+    [SerializeField] private float throwingCone;
+    [SerializeField] private Vector3 disp;
 
     private Transform player;
 
@@ -33,10 +35,14 @@ public class EnemyBalloonController : MonoBehaviour
 
         // Calculate the force to throw the balloon from the enemy towards the player
         Vector3 throwDirection = (player.position - throwPoint.position).normalized;
+
+        throwDirection.x += Random.Range(-throwingCone, throwingCone);
+
         Vector3 clampedForce = throwDirection * maxDrag * power;
 
+
         // Instantiate and throw the balloon
-        GameObject balloon = Instantiate(enemyBalloonPrefab, throwPoint.position, throwPoint.rotation);
+        GameObject balloon = Instantiate(enemyBalloonPrefab, throwPoint.position + disp, throwPoint.rotation);
         Rigidbody2D rb = balloon.GetComponent<Rigidbody2D>();
         rb.AddForce(clampedForce, ForceMode2D.Impulse);
 
