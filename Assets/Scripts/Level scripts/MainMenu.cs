@@ -10,21 +10,9 @@ public class MainMenu : MonoBehaviour
     public void PlayGame()
     {
         currLevel = PlayerPrefs.GetInt("Unlocked Level", 1);
-        switch (currLevel) {
+        if (currLevel > 8) currLevel = 8;
 
-            case 1:
-                SceneManager.LoadSceneAsync("Level 1");
-                break;
-            
-            case 2:
-                SceneManager.LoadSceneAsync("Level 2");
-                break;
-            
-            default:
-                SceneManager.LoadSceneAsync("Level " + (currLevel - 1));
-                break;
-
-        }
+        SceneManager.LoadSceneAsync("Level " + currLevel);
     }
 
     public void LevelSelect()

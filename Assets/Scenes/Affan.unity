@@ -1126,7 +1126,7 @@ MonoBehaviour:
   speed: 5
   ways: {fileID: 352039753}
   wayPoints: []
-  waitDuration: 1
+  waitDuration: 0.5
 --- !u!1 &874555542
 GameObject:
   m_ObjectHideFlags: 0
