@@ -16,8 +16,6 @@ public class BalloonCollision : MonoBehaviour
     private void Start()
     {
         Destroy(gameObject, balloonExplosionTime);
-        enemy = GameObject.FindWithTag("Enemy").GetComponent<EnemyAi>();
-        player = GameObject.FindWithTag("Player").GetComponent<Player>();
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -43,7 +41,8 @@ public class BalloonCollision : MonoBehaviour
     private void HandlePlayerBalloonCollision(Collision2D other)
     {
         if (other.gameObject.CompareTag("Enemy"))
-        {
+        {   
+            enemy = other.gameObject.GetComponent<EnemyAi>();
             enemy.TakeDamage(enemyDamage);
             Destroy(gameObject);
         }
@@ -57,6 +56,7 @@ public class BalloonCollision : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            player = other.gameObject.GetComponent<Player>();
             player.TakeDamage(playerDamage);
             Destroy(gameObject);
         }
