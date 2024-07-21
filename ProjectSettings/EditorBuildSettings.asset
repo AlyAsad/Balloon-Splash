@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 3fc8acdd13e6c734bafef6554d6fdbcd
   - enabled: 1
-    path: Assets/Scenes/Level Design.unity
+    path: Assets/Scenes/Affan.unity
     guid: c2a19accfb2528a4aae25216370baa79
   - enabled: 1
     path: Assets/Scenes/Level Select.unity
