@@ -53,6 +53,8 @@ public class BalloonCollision : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("Enemy_Balloon"))
         {
+            Instantiate(playerBalloonSplash, gameObject.transform.position, Quaternion.identity);
+            playerBalloonSplash.Play();
             Destroy(gameObject);
         }
     }
@@ -69,6 +71,8 @@ public class BalloonCollision : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("Player_Balloon"))
         {
+            Instantiate(enemyBalloonSplash, gameObject.transform.position, Quaternion.identity);
+            enemyBalloonSplash.Play();
             Destroy(gameObject);
         }
     }
