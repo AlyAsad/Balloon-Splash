@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class AddBackgroundToAllScenes : EditorWindow
 {
     private GameObject backgroundPrefab;
-    
+
     [MenuItem("Tools/Add Background to All Scenes")]
     public static void ShowWindow()
     {

@@ -17,7 +17,7 @@ public class ThrowingBalloon : MonoBehaviour
 
     [SerializeField] LineRenderer lr;
     [SerializeField] Rigidbody2D PlayerRigidBody;
-    
+    [SerializeField] float maxForce = 10f;
 
     // Update is called once per frame
     private void Update()
@@ -68,6 +68,7 @@ public class ThrowingBalloon : MonoBehaviour
 
         Vector3 force = dragStartPos - dragReleasePos;
         Vector3 clampedForce = Vector3.ClampMagnitude(force, maxDrag) * power;
+        clampedForce = Vector3.ClampMagnitude(clampedForce, maxForce);
 
         GameObject balloon = Instantiate(balloonPrefab, throwPoint.position, throwPoint.rotation);
         Rigidbody2D rb = balloon.GetComponent<Rigidbody2D>();

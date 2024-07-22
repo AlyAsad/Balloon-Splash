@@ -7,10 +7,11 @@ public class EnemyBalloonController : MonoBehaviour
     [SerializeField] private float maxDrag = 5f;
     [SerializeField] private float recoilPercent = 0.2f;
     [SerializeField] private Transform throwPoint;
-    [SerializeField] private GameObject enemyBalloonPrefab; 
+    [SerializeField] private GameObject enemyBalloonPrefab;
     [SerializeField] private Rigidbody2D enemyRb;
     [SerializeField] private float throwingCone;
     [SerializeField] private Vector3 disp;
+    [SerializeField] private float maxForce = 10f;
 
     private Transform player;
 
@@ -38,8 +39,8 @@ public class EnemyBalloonController : MonoBehaviour
 
         throwDirection.x += Random.Range(-throwingCone, throwingCone);
 
-        Vector3 clampedForce = throwDirection * maxDrag * power;
-
+        Vector3 force = throwDirection * maxDrag * power;
+        Vector3 clampedForce = Vector3.ClampMagnitude(force, maxForce);
 
         // Instantiate and throw the balloon
         GameObject balloon = Instantiate(enemyBalloonPrefab, throwPoint.position + disp, throwPoint.rotation);
