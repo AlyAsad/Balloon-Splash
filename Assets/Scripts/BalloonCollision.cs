@@ -12,6 +12,8 @@ public class BalloonCollision : MonoBehaviour
     private int numOfCollisions = 0;
     private EnemyAi enemy;
     private Player player;
+    [SerializeField] ParticleSystem splash;
+
 
     private void Start()
     {
@@ -44,6 +46,8 @@ public class BalloonCollision : MonoBehaviour
         {   
             enemy = other.gameObject.GetComponent<EnemyAi>();
             enemy.TakeDamage(enemyDamage);
+            splash.transform.position = gameObject.transform.position;
+            splash.Play();
             Destroy(gameObject);
         }
         else if (other.gameObject.CompareTag("Enemy_Balloon"))

@@ -165,3 +165,4 @@ MonoBehaviour:
   playerDamage: 1
   maxWallBounce: 2
   balloonExplosionTime: 10
+  splash: {fileID: 5132359723084666226, guid: dafa33129b3383747b8817bab511a56f, type: 3}
