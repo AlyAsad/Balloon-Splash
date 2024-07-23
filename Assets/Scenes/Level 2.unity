@@ -2814,6 +2814,7 @@ MonoBehaviour:
   enemyRb: {fileID: 1727357795}
   throwingCone: 0.2
   disp: {x: 0, y: -0.7, z: 0}
+  maxForce: 10
 --- !u!58 &1727357794
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3102,6 +3103,7 @@ MonoBehaviour:
   enemyRb: {fileID: 1746311751}
   throwingCone: 0.2
   disp: {x: 0, y: -0.7, z: 0}
+  maxForce: 10
 --- !u!58 &1746311750
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3689,12 +3691,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   throwPoint: {fileID: 243162492}
   balloonPrefab: {fileID: 3924599004871305105, guid: 64fbc9bd65437d248afe7cad616f8f4b, type: 3}
+  bombPrefab: {fileID: 0}
   ballonForce: 20
   power: 10
   maxDrag: 5
   recoilPercent: 0.2
   lr: {fileID: 1991415896}
   PlayerRigidBody: {fileID: 1991415899}
+  maxForce: 10
+  isBomb: 0
 --- !u!58 &1991415898
 CircleCollider2D:
   m_ObjectHideFlags: 0
