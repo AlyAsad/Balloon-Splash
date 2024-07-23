@@ -6,7 +6,6 @@ public class Player : MonoBehaviour
 {
     [SerializeField] float health = 10f, maxHealth = 10f;
     [SerializeField] PlayerHealthBar healthBar;
-
     private void Start()
     {
         healthBar.UpdateHealthBar(health, maxHealth);
@@ -15,7 +14,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void TakeDamage(float damageAmount)

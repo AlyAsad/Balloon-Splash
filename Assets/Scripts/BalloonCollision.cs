@@ -31,6 +31,10 @@ public class BalloonCollision : MonoBehaviour
         {
             HandleEnemyBalloonCollision(other);
         }
+        else if (gameObject.CompareTag("Water_Bomb"))
+        {
+            HandleWaterBombCollision(other);
+        }
 
         if (other.gameObject.CompareTag("Wall"))
         {
@@ -41,10 +45,28 @@ public class BalloonCollision : MonoBehaviour
         }
     }
 
+    private void HandleWaterBombCollision(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            enemy = other.gameObject.GetComponent<EnemyAi>();
+            enemy.TakeDamage((float)1.5 * enemyDamage);
+            Instantiate(playerBalloonSplash, gameObject.transform.position, Quaternion.identity);
+            playerBalloonSplash.Play();
+            Destroy(gameObject);
+        }
+
+        else if (other.gameObject.CompareTag("Enemy_Balloon"))
+        {
+            Instantiate(playerBalloonSplash, gameObject.transform.position, Quaternion.identity);
+            playerBalloonSplash.Play();
+            Destroy(gameObject);
+        }
+    }
     private void HandlePlayerBalloonCollision(Collision2D other)
     {
         if (other.gameObject.CompareTag("Enemy"))
-        {   
+        {
             enemy = other.gameObject.GetComponent<EnemyAi>();
             enemy.TakeDamage(enemyDamage);
             Instantiate(playerBalloonSplash, gameObject.transform.position, Quaternion.identity);
@@ -70,6 +92,12 @@ public class BalloonCollision : MonoBehaviour
             Destroy(gameObject);
         }
         else if (other.gameObject.CompareTag("Player_Balloon"))
+        {
+            Instantiate(enemyBalloonSplash, gameObject.transform.position, Quaternion.identity);
+            enemyBalloonSplash.Play();
+            Destroy(gameObject);
+        }
+        else if (other.gameObject.CompareTag("Water_Bomb"))
         {
             Instantiate(enemyBalloonSplash, gameObject.transform.position, Quaternion.identity);
             enemyBalloonSplash.Play();
