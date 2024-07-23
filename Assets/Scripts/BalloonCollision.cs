@@ -14,6 +14,7 @@ public class BalloonCollision : MonoBehaviour
     private Player player;
     [SerializeField] ParticleSystem playerBalloonSplash;
     [SerializeField] ParticleSystem enemyBalloonSplash;
+    [SerializeField] ParticleSystem waterBombSplash;
 
 
     private void Start()
@@ -51,15 +52,15 @@ public class BalloonCollision : MonoBehaviour
         {
             enemy = other.gameObject.GetComponent<EnemyAi>();
             enemy.TakeDamage((float)1.5 * enemyDamage);
-            Instantiate(playerBalloonSplash, gameObject.transform.position, Quaternion.identity);
-            playerBalloonSplash.Play();
+            Instantiate(waterBombSplash, gameObject.transform.position, Quaternion.identity);
+            waterBombSplash.Play();
             Destroy(gameObject);
         }
 
         else if (other.gameObject.CompareTag("Enemy_Balloon"))
         {
-            Instantiate(playerBalloonSplash, gameObject.transform.position, Quaternion.identity);
-            playerBalloonSplash.Play();
+            Instantiate(waterBombSplash, gameObject.transform.position, Quaternion.identity);
+            waterBombSplash.Play();
             Destroy(gameObject);
         }
     }

@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 3924599004871305105}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.005, y: -3.723, z: 0}
+  m_LocalPosition: {x: -0.494, y: -3.516, z: 0}
   m_LocalScale: {x: 0.6, y: 0.6, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: -2413806693520163455, guid: 4adeaf2d2b1c7417e89f026626d8264f, type: 3}
+  m_Sprite: {fileID: -1277836912, guid: 9b322019c3f2d074aa99e8df033faeaf, type: 3}
   m_Color: {r: 0.89829814, g: 0.9245283, b: 0.8913848, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -167,3 +167,4 @@ MonoBehaviour:
   balloonExplosionTime: 10
   playerBalloonSplash: {fileID: 6102926847758901045, guid: dafa33129b3383747b8817bab511a56f, type: 3}
   enemyBalloonSplash: {fileID: 107181026092931089, guid: 915b7b740587ec64b9503b91a25c8891, type: 3}
+  waterBombSplash: {fileID: 8674329896771782270, guid: e857a069a0143d542a80b224014ac8ea, type: 3}
