@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class ThrowingBalloon : MonoBehaviour
 {
+    private int waitFrames = 0;
     public Transform throwPoint;
     public GameObject balloonPrefab;
     public GameObject bombPrefab;
@@ -25,6 +26,21 @@ public class ThrowingBalloon : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+
+        // IF GAME IS PAUSED DONT TAKE INPUT
+        if (PauseMenu.gameIsPaused == true)
+        {
+            waitFrames = 2;
+            return;
+        }
+        
+        
+        if (waitFrames > 0) {
+            waitFrames--;
+            return;
+        }
+
+
         if (Input.touchCount > 0)
         {
             touch = Input.GetTouch(0);

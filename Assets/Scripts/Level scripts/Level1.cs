@@ -5,10 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class Level1 : MonoBehaviour
 {
-    public void BackToMenu()
-    {
-        SceneManager.LoadSceneAsync("MainMenu");
-    }
 
     public void levelPassed() 
     {   
@@ -17,4 +13,5 @@ public class Level1 : MonoBehaviour
             PlayerPrefs.Save();
         }
     }
+
 }
