@@ -7,24 +7,25 @@ public class Level1 : MonoBehaviour
 {
 
     [SerializeField] private GameObject LevelCompleteUI;
+    [SerializeField] private GameObject LevelFailedUI;
     [SerializeField] private GameObject enemy;
     [SerializeField] private GameObject player;
 
-    private bool enemyDead = false;
+    private bool lvlPassed = false, lvlFailed = false;
 
     private void Update()
     {
-        if (enemyDead) return;
+        if (lvlPassed || lvlFailed) return;
 
         // if enemy died, level passed
         if (enemy == null) {
-            enemyDead = true;
+            lvlPassed = true;
             levelPassed();
         }
 
         // if player died, level failed
         else if (player == null) {
-            if (PauseMenu.gameIsPaused == true) return;
+            lvlFailed = true;
             levelFailed();
         }
 
@@ -46,7 +47,9 @@ public class Level1 : MonoBehaviour
 
     public void levelFailed()
     {
-        
+        LevelFailedUI.SetActive(true);
+        Time.timeScale = 0f;
+        PauseMenu.gameIsPaused = true;
     }
 
 
