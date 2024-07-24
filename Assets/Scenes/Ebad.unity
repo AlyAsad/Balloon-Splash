@@ -863,7 +863,7 @@ Transform:
   m_GameObject: {fileID: 587456903}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.002, y: 0.94, z: 0}
+  m_LocalPosition: {x: 0.324, y: 2.259, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2235,11 +2235,12 @@ MonoBehaviour:
   ballonForce: 20
   power: 10
   maxDrag: 5
-  recoilPercent: 0.2
+  recoilPercent: 0.5
+  muzzleRecoil: {fileID: 4809829236238375949, guid: 955b0e6cdf7fec04fa8a7410315c6250, type: 3}
   lr: {fileID: 1358444501}
   PlayerRigidBody: {fileID: 1358444504}
   maxForce: 15
-  isBomb: 1
+  isBomb: 0
 --- !u!58 &1358444503
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2272,9 +2273,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.01}
+  m_Offset: {x: 0, y: -0.15196377}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 1.0080364
 --- !u!50 &1358444504
 Rigidbody2D:
   serializedVersion: 4
@@ -2343,8 +2344,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
-  m_Color: {r: 0.18639362, g: 0.8679245, b: 0.09416164, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 8de9905fbbfc6b84f86ca068e523e97e, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2364,7 +2365,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: -3.36, z: 0.06920045}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.45, y: 0.45, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 587456904}

@@ -17,6 +17,8 @@ public class ThrowingBalloon : MonoBehaviour
     [SerializeField] float maxDrag = 5f;
     [SerializeField] float recoilPercent = 0.2f;
 
+    [SerializeField] ParticleSystem muzzleRecoil;
+
     [SerializeField] LineRenderer lr;
     [SerializeField] Rigidbody2D PlayerRigidBody;
     [SerializeField] float maxForce = 10f;
@@ -33,9 +35,10 @@ public class ThrowingBalloon : MonoBehaviour
             waitFrames = 2;
             return;
         }
-        
-        
-        if (waitFrames > 0) {
+
+
+        if (waitFrames > 0)
+        {
             waitFrames--;
             return;
         }
@@ -99,7 +102,15 @@ public class ThrowingBalloon : MonoBehaviour
         playerClampedForce.y = -1 * clampedForce.y * recoilPercent;
         playerClampedForce.z = -1 * clampedForce.z * recoilPercent;
 
+
+        Instantiate(muzzleRecoil, throwPoint.position, Quaternion.identity);
+        muzzleRecoil.Play();
+
         PlayerRigidBody.AddForce(playerClampedForce, ForceMode2D.Impulse);
+
+
+
+
         rb.AddForce(clampedForce, ForceMode2D.Impulse);
     }
 
