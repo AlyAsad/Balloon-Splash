@@ -205,7 +205,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 332169679}
         m_TargetAssemblyTypeName: Level4, Assembly-CSharp
         m_MethodName: levelPassed
         m_Mode: 1
@@ -3778,7 +3778,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 332169679}
         m_TargetAssemblyTypeName: Level4, Assembly-CSharp
         m_MethodName: BackToMenu
         m_Mode: 1
