@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.Dependencies.Sqlite;
 using UnityEngine;
 
 public class ThrowingBalloon : MonoBehaviour
@@ -11,6 +12,8 @@ public class ThrowingBalloon : MonoBehaviour
     public GameObject bombPrefab;
     public float ballonForce = 20f;
     Vector3 dragStartPos;
+    Vector3 draggingPos;
+    Vector3 dragReleasePos;
     Touch touch;
 
     [SerializeField] float power = 10f;
@@ -24,6 +27,7 @@ public class ThrowingBalloon : MonoBehaviour
     [SerializeField] float maxForce = 10f;
 
     [SerializeField] bool isBomb = false;
+
 
     // Update is called once per frame
     private void Update()
@@ -73,19 +77,39 @@ public class ThrowingBalloon : MonoBehaviour
         dragStartPos.z = 0f;
         lr.positionCount = 1;
         lr.SetPosition(0, dragStartPos);
+
+        Vector3 direction;
+        direction.x = dragStartPos.x - throwPoint.position.x;
+        direction.y = dragStartPos.y - throwPoint.position.y;
+        direction.z = dragStartPos.z - throwPoint.position.z;
+
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90;
+        PlayerRigidBody.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward * Time.deltaTime);
     }
     void Dragging()
     {
-        Vector3 draggingPos = Camera.main.ScreenToWorldPoint(touch.position);
+        draggingPos = Camera.main.ScreenToWorldPoint(touch.position);
         draggingPos.z = 0f;
         lr.positionCount = 2;
         lr.SetPosition(1, draggingPos);
+
+
+        Vector3 resultantDirection = dragStartPos - draggingPos;
+
+
+        Vector3 direction;
+        direction.x = resultantDirection.x - throwPoint.position.x;
+        direction.y = resultantDirection.y - throwPoint.position.y;
+        direction.z = resultantDirection.z - throwPoint.position.z;
+
+        float angle = Mathf.Atan2(resultantDirection.y, resultantDirection.x) * Mathf.Rad2Deg - 90;
+        PlayerRigidBody.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward * Time.deltaTime);
     }
     void DragRelease()
     {
         lr.positionCount = 0;
 
-        Vector3 dragReleasePos = Camera.main.ScreenToWorldPoint(touch.position);
+        dragReleasePos = Camera.main.ScreenToWorldPoint(touch.position);
         dragReleasePos.z = 0f;
 
         Vector3 force = dragStartPos - dragReleasePos;
@@ -103,8 +127,9 @@ public class ThrowingBalloon : MonoBehaviour
         playerClampedForce.z = -1 * clampedForce.z * recoilPercent;
 
 
-        Instantiate(muzzleRecoil, throwPoint.position, Quaternion.identity);
-        muzzleRecoil.Play();
+        ParticleSystem muzzleRecoilInstance = Instantiate(muzzleRecoil, throwPoint.position, Quaternion.identity);
+        muzzleRecoilInstance.Play();
+        Destroy(muzzleRecoilInstance.gameObject, 1f);
 
         PlayerRigidBody.AddForce(playerClampedForce, ForceMode2D.Impulse);
 
@@ -113,6 +138,7 @@ public class ThrowingBalloon : MonoBehaviour
 
         rb.AddForce(clampedForce, ForceMode2D.Impulse);
     }
+
 
 
 
