@@ -31,9 +31,14 @@ public class MainMenu : MonoBehaviour
         PlayerPrefs.Save();
     }
 
-    public void GoToSandbox()
+    public void GoToAffan()
     {
-        SceneManager.LoadSceneAsync("Level Design");
+        SceneManager.LoadSceneAsync("Affan");
+    }
+
+    public void GoToEbad()
+    {
+        SceneManager.LoadSceneAsync("Ebad");
     }
 }
 
