@@ -1,7 +1,7 @@
 using UnityEditor;
 using UnityEngine;
-using UnityEditor.SceneManagement;
 using UnityEngine.SceneManagement;
+using UnityEditor.SceneManagement;
 
 public class AddBackgroundToAllScenes : EditorWindow
 {
