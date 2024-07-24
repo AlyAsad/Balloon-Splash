@@ -1,10 +1,20 @@
-using UnityEditor;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEditor.SceneManagement;
 
+
+//
+//
+// GETTING COMPILE ERRORS SO COMMENTING OUT RN
+//
+//
+
+
+/*
 public class AddBackgroundToAllScenes : EditorWindow
-{
+
+{   
     private GameObject backgroundPrefab;
 
     [MenuItem("Tools/Add Background to All Scenes")]
@@ -53,5 +63,10 @@ public class AddBackgroundToAllScenes : EditorWindow
 
         Debug.Log("Background added to all scenes.");
     }
-}
+}*/
 
+
+
+
+//REMOVE WHEN ABOVE CODE IS FIXED
+public class AddBackgroundToAllScenes : MonoBehaviour {}
