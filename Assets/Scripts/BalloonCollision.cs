@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,6 +13,7 @@ public class BalloonCollision : MonoBehaviour
     private int numOfCollisions = 0;
     private EnemyAi enemy;
     private Player player;
+    ThrowingBalloon playerforPowerUp;
     [SerializeField] ParticleSystem playerBalloonSplash;
     [SerializeField] ParticleSystem enemyBalloonSplash;
     [SerializeField] ParticleSystem waterBombSplash;
@@ -20,6 +22,25 @@ public class BalloonCollision : MonoBehaviour
     private void Start()
     {
         Destroy(gameObject, balloonExplosionTime);
+    }
+
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (gameObject.CompareTag("Player_Balloon"))
+        {
+            if (other.gameObject.CompareTag("PowerUpWaterBomb"))
+            {
+                playerforPowerUp = GameObject.FindWithTag("Player").GetComponent<ThrowingBalloon>();
+                //playerforPowerUp.isBomb = ;
+                playerforPowerUp.setIsBomb();
+
+
+
+                Destroy(other.gameObject);
+                Debug.Log("Collided with powerup");
+            }
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -80,6 +101,7 @@ public class BalloonCollision : MonoBehaviour
             playerBalloonSplash.Play();
             Destroy(gameObject);
         }
+
     }
 
     private void HandleEnemyBalloonCollision(Collision2D other)

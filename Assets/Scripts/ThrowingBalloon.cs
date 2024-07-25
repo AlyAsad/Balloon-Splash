@@ -26,7 +26,7 @@ public class ThrowingBalloon : MonoBehaviour
     [SerializeField] Rigidbody2D PlayerRigidBody;
     [SerializeField] float maxForce = 10f;
 
-    [SerializeField] bool isBomb = false;
+    [SerializeField] public bool isBomb = false;
 
 
     // Update is called once per frame
@@ -141,6 +141,15 @@ public class ThrowingBalloon : MonoBehaviour
 
 
 
+    public void setIsBomb()
+    {
+        isBomb = true;
+    }
 
+
+    public void clearIsBomb()
+    {
+        isBomb = false;
+    }
 
 }
