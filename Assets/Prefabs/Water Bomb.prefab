@@ -168,3 +168,4 @@ MonoBehaviour:
   playerBalloonSplash: {fileID: 6102926847758901045, guid: dafa33129b3383747b8817bab511a56f, type: 3}
   enemyBalloonSplash: {fileID: 107181026092931089, guid: 915b7b740587ec64b9503b91a25c8891, type: 3}
   waterBombSplash: {fileID: 8674329896771782270, guid: e857a069a0143d542a80b224014ac8ea, type: 3}
+  waterBombRecoil: {fileID: 4667648667538758694, guid: bba3e49411b331e46bbe7ef963fd67f8, type: 3}

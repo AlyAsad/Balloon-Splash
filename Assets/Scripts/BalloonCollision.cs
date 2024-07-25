@@ -17,6 +17,7 @@ public class BalloonCollision : MonoBehaviour
     [SerializeField] ParticleSystem playerBalloonSplash;
     [SerializeField] ParticleSystem enemyBalloonSplash;
     [SerializeField] ParticleSystem waterBombSplash;
+    [SerializeField] ParticleSystem waterBombRecoil;
 
 
     private void Start()
@@ -32,13 +33,11 @@ public class BalloonCollision : MonoBehaviour
             if (other.gameObject.CompareTag("PowerUpWaterBomb"))
             {
                 playerforPowerUp = GameObject.FindWithTag("Player").GetComponent<ThrowingBalloon>();
-                //playerforPowerUp.isBomb = ;
                 playerforPowerUp.setIsBomb();
 
 
 
                 Destroy(other.gameObject);
-                Debug.Log("Collided with powerup");
             }
         }
     }
@@ -73,15 +72,33 @@ public class BalloonCollision : MonoBehaviour
         {
             enemy = other.gameObject.GetComponent<EnemyAi>();
             enemy.TakeDamage((float)1.5 * enemyDamage);
-            Instantiate(waterBombSplash, gameObject.transform.position, Quaternion.identity);
-            waterBombSplash.Play();
+
+
+            ParticleSystem waterBombSplashInstance = Instantiate(waterBombSplash, gameObject.transform.position, Quaternion.identity);
+            waterBombSplashInstance.Play();
+            Destroy(waterBombSplashInstance, 1f);
+
+            ParticleSystem waterBombRecoilInstance = Instantiate(waterBombRecoil, gameObject.transform.position, Quaternion.identity);
+            waterBombRecoilInstance.Play();
+            Destroy(waterBombRecoilInstance, 1f);
+
+
+
             Destroy(gameObject);
         }
 
         else if (other.gameObject.CompareTag("Enemy_Balloon"))
         {
-            Instantiate(waterBombSplash, gameObject.transform.position, Quaternion.identity);
-            waterBombSplash.Play();
+            ParticleSystem waterBombSplashInstance = Instantiate(waterBombSplash, gameObject.transform.position, Quaternion.identity);
+            waterBombSplashInstance.Play();
+            Destroy(waterBombSplashInstance, 1f);
+
+
+
+            ParticleSystem waterBombRecoilInstance = Instantiate(waterBombRecoil, gameObject.transform.position, Quaternion.identity);
+            waterBombRecoilInstance.Play();
+            Destroy(waterBombRecoilInstance, 1f);
+
             Destroy(gameObject);
         }
     }
@@ -91,14 +108,20 @@ public class BalloonCollision : MonoBehaviour
         {
             enemy = other.gameObject.GetComponent<EnemyAi>();
             enemy.TakeDamage(enemyDamage);
-            Instantiate(playerBalloonSplash, gameObject.transform.position, Quaternion.identity);
-            playerBalloonSplash.Play();
+
+            ParticleSystem playerBalloonSplashInstance = Instantiate(playerBalloonSplash, gameObject.transform.position, Quaternion.identity);
+            playerBalloonSplashInstance.Play();
+            Destroy(playerBalloonSplashInstance, 1f);
+
+
             Destroy(gameObject);
         }
         else if (other.gameObject.CompareTag("Enemy_Balloon"))
         {
-            Instantiate(playerBalloonSplash, gameObject.transform.position, Quaternion.identity);
-            playerBalloonSplash.Play();
+            ParticleSystem playerBalloonSplashInstance = Instantiate(playerBalloonSplash, gameObject.transform.position, Quaternion.identity);
+            playerBalloonSplashInstance.Play();
+            Destroy(playerBalloonSplashInstance, 1f);
+
             Destroy(gameObject);
         }
 
@@ -110,20 +133,27 @@ public class BalloonCollision : MonoBehaviour
         {
             player = other.gameObject.GetComponent<Player>();
             player.TakeDamage(playerDamage);
-            Instantiate(enemyBalloonSplash, gameObject.transform.position, Quaternion.identity);
-            enemyBalloonSplash.Play();
+
+            ParticleSystem enemyBalloonSplashInstance = Instantiate(enemyBalloonSplash, gameObject.transform.position, Quaternion.identity);
+            enemyBalloonSplashInstance.Play();
+            Destroy(enemyBalloonSplashInstance, 1f);
+
             Destroy(gameObject);
         }
         else if (other.gameObject.CompareTag("Player_Balloon"))
         {
-            Instantiate(enemyBalloonSplash, gameObject.transform.position, Quaternion.identity);
-            enemyBalloonSplash.Play();
+            ParticleSystem enemyBalloonSplashInstance = Instantiate(enemyBalloonSplash, gameObject.transform.position, Quaternion.identity);
+            enemyBalloonSplashInstance.Play();
+            Destroy(enemyBalloonSplashInstance, 1f);
+
             Destroy(gameObject);
         }
         else if (other.gameObject.CompareTag("Water_Bomb"))
         {
-            Instantiate(enemyBalloonSplash, gameObject.transform.position, Quaternion.identity);
-            enemyBalloonSplash.Play();
+            ParticleSystem enemyBalloonSplashInstance = Instantiate(enemyBalloonSplash, gameObject.transform.position, Quaternion.identity);
+            enemyBalloonSplashInstance.Play();
+            Destroy(enemyBalloonSplashInstance, 1f);
+
             Destroy(gameObject);
         }
     }
