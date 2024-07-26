@@ -18,8 +18,12 @@ public class BalloonCollision : MonoBehaviour
     [SerializeField] ParticleSystem enemyBalloonSplash;
     [SerializeField] ParticleSystem waterBombSplash;
     [SerializeField] ParticleSystem waterBombRecoil;
-    
+
     public bool justTeleported = false;
+
+
+    public GameObject balloonPrefab;
+    public GameObject waterBombPrefab;
 
 
 
@@ -42,8 +46,66 @@ public class BalloonCollision : MonoBehaviour
 
                 Destroy(other.gameObject);
             }
+
+            if (other.gameObject.CompareTag("PowerUpMultiply"))
+            {
+                Destroy(other.gameObject);
+                GameObject balloon1 = Instantiate(balloonPrefab, gameObject.transform.position, Quaternion.identity);
+                GameObject balloon2 = Instantiate(balloonPrefab, gameObject.transform.position, Quaternion.identity);
+
+                Rigidbody2D originalRB = gameObject.GetComponent<Rigidbody2D>();
+                Rigidbody2D balloon1RB = balloon1.GetComponent<Rigidbody2D>();
+                Rigidbody2D balloon2RB = balloon2.GetComponent<Rigidbody2D>();
+
+                // Copy velocity and angular velocity              
+                float angle1 = 22.5f;
+                Quaternion rotation1 = Quaternion.Euler(0, 0, angle1);
+                balloon1RB.velocity = rotation1 * originalRB.velocity;
+                balloon1RB.angularVelocity = originalRB.angularVelocity;
+
+                float angle2 = -22.5f;
+                Quaternion rotation2 = Quaternion.Euler(0, 0, angle2);
+                balloon2RB.velocity = rotation2 * originalRB.velocity;
+                balloon2RB.angularVelocity = originalRB.angularVelocity;
+
+                Destroy(balloon1, 10f);
+                Destroy(balloon2, 10f);
+                Destroy(gameObject);
+            }
         }
+
+        if (gameObject.CompareTag("Water_Bomb"))
+        {
+            if (other.gameObject.CompareTag("PowerUpMultiply"))
+            {
+                Destroy(other.gameObject);
+
+                GameObject balloon1 = Instantiate(waterBombPrefab, gameObject.transform.position, Quaternion.identity);
+                GameObject balloon2 = Instantiate(waterBombPrefab, gameObject.transform.position, Quaternion.identity);
+
+                Rigidbody2D originalRB = gameObject.GetComponent<Rigidbody2D>();
+                Rigidbody2D balloon1RB = balloon1.GetComponent<Rigidbody2D>();
+                Rigidbody2D balloon2RB = balloon2.GetComponent<Rigidbody2D>();
+
+                // Copy velocity and angular velocity              
+                float angle1 = 22.5f;
+                Quaternion rotation1 = Quaternion.Euler(0, 0, angle1);
+                balloon1RB.velocity = rotation1 * originalRB.velocity;
+                balloon1RB.angularVelocity = originalRB.angularVelocity;
+
+                float angle2 = -22.5f;
+                Quaternion rotation2 = Quaternion.Euler(0, 0, angle2);
+                balloon2RB.velocity = rotation2 * originalRB.velocity;
+                balloon2RB.angularVelocity = originalRB.angularVelocity;
+
+                Destroy(balloon1, 10f);
+                Destroy(balloon2, 10f);
+                Destroy(gameObject);
+            }
+        }
+
     }
+
 
     private void OnCollisionEnter2D(Collision2D other)
     {
@@ -162,12 +224,12 @@ public class BalloonCollision : MonoBehaviour
     }
 
 
-    public void makeTeleportedFalse(float t) 
+    public void makeTeleportedFalse(float t)
     {
         Invoke("makeTeleportedActuallyFalse", t);
     }
 
-    private void makeTeleportedActuallyFalse() 
+    private void makeTeleportedActuallyFalse()
     {
         justTeleported = false;
     }
