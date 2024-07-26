@@ -18,6 +18,9 @@ public class BalloonCollision : MonoBehaviour
     [SerializeField] ParticleSystem enemyBalloonSplash;
     [SerializeField] ParticleSystem waterBombSplash;
     [SerializeField] ParticleSystem waterBombRecoil;
+    
+    public bool justTeleported = false;
+
 
 
     private void Start()
@@ -156,6 +159,17 @@ public class BalloonCollision : MonoBehaviour
 
             Destroy(gameObject);
         }
+    }
+
+
+    public void makeTeleportedFalse(float t) 
+    {
+        Invoke("makeTeleportedActuallyFalse", t);
+    }
+
+    private void makeTeleportedActuallyFalse() 
+    {
+        justTeleported = false;
     }
 }
 

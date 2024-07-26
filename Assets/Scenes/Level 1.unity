@@ -2772,7 +2772,7 @@ MonoBehaviour:
   PlayerRigidBody: {fileID: 1123138992}
   maxForce: 10
   isBomb: 0
-  minMagnitudeForBalloon: 2
+  minMagnitudeForBalloon: 0.3
 --- !u!58 &1123138991
 CircleCollider2D:
   m_ObjectHideFlags: 0
