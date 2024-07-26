@@ -29,6 +29,8 @@ public class ThrowingBalloon : MonoBehaviour
 
     [SerializeField] private float minMagnitudeForBalloon;
 
+    [SerializeField] int numberOfThrowsForWaterBomb = 2;
+
 
     // Update is called once per frame
     private void Update()
@@ -124,7 +126,16 @@ public class ThrowingBalloon : MonoBehaviour
 
         GameObject balloon;
         if (!isBomb) balloon = Instantiate(balloonPrefab, throwPoint.position, throwPoint.rotation);
-        else balloon = Instantiate(bombPrefab, throwPoint.position, throwPoint.rotation);
+        else
+        {
+            balloon = Instantiate(bombPrefab, throwPoint.position, throwPoint.rotation);
+            numberOfThrowsForWaterBomb--;
+            if (numberOfThrowsForWaterBomb == 0)
+            {
+                numberOfThrowsForWaterBomb = 2;
+                isBomb = false;
+            }
+        }
         Rigidbody2D rb = balloon.GetComponent<Rigidbody2D>();
 
         Vector3 playerClampedForce;
@@ -150,12 +161,6 @@ public class ThrowingBalloon : MonoBehaviour
     public void setIsBomb()
     {
         isBomb = true;
-    }
-
-
-    public void clearIsBomb()
-    {
-        isBomb = false;
     }
 
 }
