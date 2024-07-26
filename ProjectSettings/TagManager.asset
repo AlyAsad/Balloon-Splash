@@ -12,6 +12,7 @@ TagManager:
   - Water_Bomb
   - PowerUpWaterBomb
   - PowerUpMultiply
+  - PowerUpHealth
   layers:
   - Default
   - TransparentFX

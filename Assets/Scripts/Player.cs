@@ -32,4 +32,10 @@ public class Player : MonoBehaviour
     {
         Destroy(gameObject);
     }
+
+    public void increaseHealth()
+    {
+        health = maxHealth;
+        healthBar.UpdateHealthBar(health, maxHealth);
+    }
 }

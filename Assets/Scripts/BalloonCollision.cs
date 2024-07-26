@@ -29,7 +29,7 @@ public class BalloonCollision : MonoBehaviour
 
     private void Start()
     {
-        Destroy(gameObject, balloonExplosionTime);
+        //Destroy(gameObject, balloonExplosionTime);
     }
 
 
@@ -72,6 +72,14 @@ public class BalloonCollision : MonoBehaviour
                 Destroy(balloon2, 10f);
                 Destroy(gameObject);
             }
+
+
+            if (other.gameObject.CompareTag("PowerUpHealth"))
+            {
+                Destroy(other.gameObject);
+                player = GameObject.FindWithTag("Player").GetComponent<Player>();
+                player.increaseHealth();
+            }
         }
 
         if (gameObject.CompareTag("Water_Bomb"))
@@ -101,6 +109,13 @@ public class BalloonCollision : MonoBehaviour
                 Destroy(balloon1, 10f);
                 Destroy(balloon2, 10f);
                 Destroy(gameObject);
+            }
+
+            if (other.gameObject.CompareTag("PowerUpHealth"))
+            {
+                Destroy(other.gameObject);
+                player = GameObject.FindWithTag("Player").GetComponent<Player>();
+                player.increaseHealth();
             }
         }
 
