@@ -28,6 +28,8 @@ public class ThrowingBalloon : MonoBehaviour
 
     [SerializeField] public bool isBomb = false;
 
+    [SerializeField] private float minMagnitudeForBalloon;
+
 
     // Update is called once per frame
     private void Update()
@@ -115,6 +117,11 @@ public class ThrowingBalloon : MonoBehaviour
         Vector3 force = dragStartPos - dragReleasePos;
         Vector3 clampedForce = Vector3.ClampMagnitude(force, maxDrag) * power;
         clampedForce = Vector3.ClampMagnitude(clampedForce, maxForce);
+
+
+        // a check so player doesnt make balloon with no speed
+        if (force.magnitude < minMagnitudeForBalloon) return;
+
 
         GameObject balloon;
         if (!isBomb) balloon = Instantiate(balloonPrefab, throwPoint.position, throwPoint.rotation);
