@@ -1168,6 +1168,7 @@ MonoBehaviour:
   enemyRb: {fileID: 874555545}
   throwingCone: 0.2
   disp: {x: 0, y: -0.7, z: 0}
+  maxForce: 10
 --- !u!58 &874555544
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1944,7 +1945,7 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.3920002
+        value: 0.3280027
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -1952,8 +1953,8 @@ LineRenderer:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.9401544
-        value: 0.13389122
+        time: 0.94705135
+        value: 0.021891713
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -1965,8 +1966,8 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 1}
+      key0: {r: 1, g: 1, b: 1, a: 0.29411766}
+      key1: {r: 1, g: 1, b: 1, a: 0.29411766}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -2018,12 +2019,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   throwPoint: {fileID: 587456904}
   balloonPrefab: {fileID: 3924599004871305105, guid: 64fbc9bd65437d248afe7cad616f8f4b, type: 3}
+  bombPrefab: {fileID: 0}
   ballonForce: 20
   power: 10
   maxDrag: 5
   recoilPercent: 0.2
+  muzzleRecoil: {fileID: 0}
   lr: {fileID: 1358444501}
   PlayerRigidBody: {fileID: 1358444504}
+  maxForce: 10
+  isBomb: 0
 --- !u!58 &1358444503
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2934,6 +2939,7 @@ MonoBehaviour:
   enemyRb: {fileID: 1647381084}
   throwingCone: 0.2
   disp: {x: 0, y: -0.7, z: 0}
+  maxForce: 10
 --- !u!58 &1647381083
 CircleCollider2D:
   m_ObjectHideFlags: 0
