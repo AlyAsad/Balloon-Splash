@@ -51,6 +51,6 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Balloon-Splash(2).sln",
+    "dotnet.defaultSolution": "Balloon-Splash.sln",
     "dotnet.preferCSharpExtension": true
 }
