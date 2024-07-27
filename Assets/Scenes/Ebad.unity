@@ -620,7 +620,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.4, y: 679}
+  m_AnchoredPosition: {x: 0.4, y: 328}
   m_SizeDelta: {x: 789, y: 302.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &550384558
@@ -637,7 +637,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slider: {fileID: 550384559}
   target: {fileID: 1647381087}
-  offset: {x: 0, y: 0.5, z: 0}
+  offset: {x: 0, y: 0.9, z: 0}
 --- !u!114 &550384559
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2957,7 +2957,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 8.98}
+  m_AnchoredPosition: {x: 0, y: 10.73}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1746928004
