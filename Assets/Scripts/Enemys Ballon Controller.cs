@@ -42,6 +42,13 @@ public class EnemyBalloonController : MonoBehaviour
         Vector3 force = throwDirection * maxDrag * power;
         Vector3 clampedForce = Vector3.ClampMagnitude(force, maxForce);
 
+        
+
+        //
+        float angle = Mathf.Atan2(throwDirection.y, throwDirection.x) * Mathf.Rad2Deg + 90;
+        enemyRb.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward * Time.deltaTime);
+
+
         // Instantiate and throw the balloon
         GameObject balloon = Instantiate(enemyBalloonPrefab, throwPoint.position + disp, throwPoint.rotation);
         Rigidbody2D rb = balloon.GetComponent<Rigidbody2D>();
@@ -50,6 +57,8 @@ public class EnemyBalloonController : MonoBehaviour
         // Apply recoil to the enemy
         Vector3 recoilForce = -clampedForce * recoilPercent;
         enemyRb.AddForce(recoilForce, ForceMode2D.Impulse);
+
+
 
         // Destroy the balloon after a certain time
         Destroy(balloon, 5f); // Adjust time as needed
