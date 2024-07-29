@@ -36,9 +36,15 @@ public class BalloonCollision : MonoBehaviour
     private void Update()
     {
         float speed = Vector3.Magnitude(GetComponent<Rigidbody2D>().velocity);
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
         if (speed < minSpeed)
         {
             Destroy(gameObject);
+        }
+        else
+        {
+            float angle = Mathf.Atan2(rb.velocity.y, rb.velocity.x) * Mathf.Rad2Deg - 90;
+            transform.rotation = Quaternion.Euler(0, 0, angle);
         }
     }
 
@@ -146,14 +152,14 @@ public class BalloonCollision : MonoBehaviour
         {
             HandleWaterBombCollision(other);
         }
-        
+
         if (other.gameObject.CompareTag("Wall"))
         {
             if (numOfCollisions == maxWallBounce)
                 Destroy(gameObject);
             else
                 numOfCollisions++;
-        } 
+        }
     }
 
     private void HandleWaterBombCollision(Collision2D other)
