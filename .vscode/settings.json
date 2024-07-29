@@ -51,6 +51,6 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Balloon_Splash_Mindstorm_Github.sln",
+    "dotnet.defaultSolution": "Balloon-Splash(2).sln",
     "dotnet.preferCSharpExtension": true
 }

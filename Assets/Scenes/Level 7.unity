@@ -1515,12 +1515,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   throwPoint: {fileID: 1090944914}
   balloonPrefab: {fileID: 3924599004871305105, guid: 64fbc9bd65437d248afe7cad616f8f4b, type: 3}
+  bombPrefab: {fileID: 0}
   ballonForce: 20
   power: 10
   maxDrag: 5
   recoilPercent: 0.2
+  muzzleRecoil: {fileID: 0}
   lr: {fileID: 1123138989}
   PlayerRigidBody: {fileID: 1123138992}
+  maxForce: 10
+  isBomb: 0
+  minMagnitudeForBalloon: 0
+  numberOfThrowsForWaterBomb: 2
 --- !u!58 &1123138991
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2498,6 +2504,107 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1878943994}
   m_CullTransparentMesh: 1
+--- !u!1001 &1935643993
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2583768594824576360, guid: 667b28b053dba3b47be1120a2cb22084, type: 3}
+      propertyPath: m_Name
+      value: bgCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 3115021844128207022, guid: 667b28b053dba3b47be1120a2cb22084, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1216361790}
+    - target: {fileID: 4290355458155723735, guid: 667b28b053dba3b47be1120a2cb22084, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4290355458155723735, guid: 667b28b053dba3b47be1120a2cb22084, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4290355458155723735, guid: 667b28b053dba3b47be1120a2cb22084, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4290355458155723735, guid: 667b28b053dba3b47be1120a2cb22084, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4290355458155723735, guid: 667b28b053dba3b47be1120a2cb22084, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4290355458155723735, guid: 667b28b053dba3b47be1120a2cb22084, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4290355458155723735, guid: 667b28b053dba3b47be1120a2cb22084, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4290355458155723735, guid: 667b28b053dba3b47be1120a2cb22084, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4290355458155723735, guid: 667b28b053dba3b47be1120a2cb22084, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4290355458155723735, guid: 667b28b053dba3b47be1120a2cb22084, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4290355458155723735, guid: 667b28b053dba3b47be1120a2cb22084, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4290355458155723735, guid: 667b28b053dba3b47be1120a2cb22084, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4290355458155723735, guid: 667b28b053dba3b47be1120a2cb22084, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4290355458155723735, guid: 667b28b053dba3b47be1120a2cb22084, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4290355458155723735, guid: 667b28b053dba3b47be1120a2cb22084, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4290355458155723735, guid: 667b28b053dba3b47be1120a2cb22084, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4290355458155723735, guid: 667b28b053dba3b47be1120a2cb22084, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4290355458155723735, guid: 667b28b053dba3b47be1120a2cb22084, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4290355458155723735, guid: 667b28b053dba3b47be1120a2cb22084, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4290355458155723735, guid: 667b28b053dba3b47be1120a2cb22084, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 667b28b053dba3b47be1120a2cb22084, type: 3}
 --- !u!1 &1972660133
 GameObject:
   m_ObjectHideFlags: 0
@@ -2843,6 +2950,7 @@ MonoBehaviour:
   enemyRb: {fileID: 2007074006}
   throwingCone: 0.2
   disp: {x: 0, y: -0.7, z: 0}
+  maxForce: 10
 --- !u!58 &2007074005
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3266,3 +3374,4 @@ SceneRoots:
   - {fileID: 2007074009}
   - {fileID: 1987522597}
   - {fileID: 914667762}
+  - {fileID: 1935643993}
