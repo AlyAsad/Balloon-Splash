@@ -1827,7 +1827,7 @@ MonoBehaviour:
   power: 10
   maxDrag: 5
   recoilPercent: 0.2
-  muzzleRecoil: {fileID: 0}
+  muzzleRecoil: {fileID: 4809829236238375949, guid: 955b0e6cdf7fec04fa8a7410315c6250, type: 3}
   lr: {fileID: 1123138989}
   PlayerRigidBody: {fileID: 1123138992}
   maxForce: 10

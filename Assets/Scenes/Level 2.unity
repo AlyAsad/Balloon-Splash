@@ -3116,12 +3116,12 @@ MonoBehaviour:
   power: 10
   maxDrag: 5
   recoilPercent: 0.2
-  muzzleRecoil: {fileID: 0}
+  muzzleRecoil: {fileID: 4809829236238375949, guid: 955b0e6cdf7fec04fa8a7410315c6250, type: 3}
   lr: {fileID: 1991415896}
   PlayerRigidBody: {fileID: 1991415899}
   maxForce: 10
   isBomb: 0
-  minMagnitudeForBalloon: 0
+  minMagnitudeForBalloon: 0.3
   numberOfThrowsForWaterBomb: 2
 --- !u!58 &1991415898
 CircleCollider2D:
