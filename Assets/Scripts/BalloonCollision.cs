@@ -224,6 +224,15 @@ public class BalloonCollision : MonoBehaviour
             Destroy(gameObject);
         }
 
+        else if (other.gameObject.CompareTag("Enemy_Wall"))
+        {
+            ParticleSystem playerBalloonSplashInstance = Instantiate(playerBalloonSplash, gameObject.transform.position, Quaternion.identity);
+            playerBalloonSplashInstance.Play();
+            Destroy(playerBalloonSplashInstance, 1f);
+
+            Destroy(gameObject);
+        }
+
     }
 
     private void HandleEnemyBalloonCollision(Collision2D other)
@@ -248,6 +257,15 @@ public class BalloonCollision : MonoBehaviour
             Destroy(gameObject);
         }
         else if (other.gameObject.CompareTag("Water_Bomb"))
+        {
+            ParticleSystem enemyBalloonSplashInstance = Instantiate(enemyBalloonSplash, gameObject.transform.position, Quaternion.identity);
+            enemyBalloonSplashInstance.Play();
+            Destroy(enemyBalloonSplashInstance, 1f);
+
+            Destroy(gameObject);
+        }
+
+        else if (other.gameObject.CompareTag("Player_Wall"))
         {
             ParticleSystem enemyBalloonSplashInstance = Instantiate(enemyBalloonSplash, gameObject.transform.position, Quaternion.identity);
             enemyBalloonSplashInstance.Play();

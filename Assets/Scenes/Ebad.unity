@@ -295,7 +295,7 @@ GameObject:
   - component: {fileID: 201397035}
   m_Layer: 0
   m_Name: Top Wall
-  m_TagString: Wall
+  m_TagString: Enemy_Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1434,7 +1434,7 @@ GameObject:
   - component: {fileID: 1160347968}
   m_Layer: 0
   m_Name: Bottom Wall
-  m_TagString: Wall
+  m_TagString: Player_Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

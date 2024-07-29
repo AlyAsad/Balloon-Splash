@@ -13,6 +13,8 @@ TagManager:
   - PowerUpWaterBomb
   - PowerUpMultiply
   - PowerUpHealth
+  - Enemy_Wall
+  - Player_Wall
   layers:
   - Default
   - TransparentFX
