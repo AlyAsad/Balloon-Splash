@@ -7,8 +7,9 @@ public class BalloonCollision : MonoBehaviour
 {
     [SerializeField] private float enemyDamage = 2f;
     [SerializeField] private float playerDamage = 1f;
-    [SerializeField] private int maxWallBounce = 2;
+    [SerializeField] private int maxWallBounce = 10;
     [SerializeField] private float balloonExplosionTime = 10;
+    [SerializeField] private float minSpeed = 0.000f;
 
     private int numOfCollisions = 0;
     private EnemyAi enemy;
@@ -30,6 +31,15 @@ public class BalloonCollision : MonoBehaviour
     private void Start()
     {
         //Destroy(gameObject, balloonExplosionTime);
+    }
+
+    private void Update()
+    {
+        float speed = Vector3.Magnitude(GetComponent<Rigidbody2D>().velocity);
+        if (speed < minSpeed)
+        {
+            Destroy(gameObject);
+        }
     }
 
 
@@ -136,14 +146,14 @@ public class BalloonCollision : MonoBehaviour
         {
             HandleWaterBombCollision(other);
         }
-
+        
         if (other.gameObject.CompareTag("Wall"))
         {
             if (numOfCollisions == maxWallBounce)
                 Destroy(gameObject);
             else
                 numOfCollisions++;
-        }
+        } 
     }
 
     private void HandleWaterBombCollision(Collision2D other)
