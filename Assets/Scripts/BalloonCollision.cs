@@ -215,6 +215,15 @@ public class BalloonCollision : MonoBehaviour
             Destroy(gameObject);
         }
 
+        else if (other.gameObject.CompareTag("Player_Balloon"))
+        {
+            ParticleSystem playerBalloonSplashInstance = Instantiate(playerBalloonSplash, gameObject.transform.position, Quaternion.identity);
+            playerBalloonSplashInstance.Play();
+            Destroy(playerBalloonSplashInstance, 1f);
+
+            Destroy(gameObject);
+        }
+
     }
 
     private void HandleEnemyBalloonCollision(Collision2D other)
