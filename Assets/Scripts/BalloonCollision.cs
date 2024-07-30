@@ -86,7 +86,7 @@ public class BalloonCollision : MonoBehaviour
 
                 Destroy(balloon1, 10f);
                 Destroy(balloon2, 10f);
-                Destroy(gameObject);
+                //Destroy(gameObject);
             }
 
 
