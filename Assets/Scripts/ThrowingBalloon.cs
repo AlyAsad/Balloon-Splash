@@ -143,10 +143,7 @@ public class ThrowingBalloon : MonoBehaviour
         playerClampedForce.y = -1 * clampedForce.y * recoilPercent;
         playerClampedForce.z = -1 * clampedForce.z * recoilPercent;
 
-
-        ParticleSystem muzzleRecoilInstance = Instantiate(muzzleRecoil, throwPoint.position, Quaternion.identity);
-        muzzleRecoilInstance.Play();
-        Destroy(muzzleRecoilInstance.gameObject, 1f);
+        StartCoroutine(HandleMuzzleRecoil());
 
         PlayerRigidBody.AddForce(playerClampedForce, ForceMode2D.Impulse);
 
@@ -156,7 +153,14 @@ public class ThrowingBalloon : MonoBehaviour
         rb.AddForce(clampedForce, ForceMode2D.Impulse);
     }
 
-
+    IEnumerator HandleMuzzleRecoil()
+    {
+        muzzleRecoil.gameObject.SetActive(true);
+        muzzleRecoil.Play();
+        yield return new WaitForSeconds(1f);
+        muzzleRecoil.Stop();
+        muzzleRecoil.gameObject.SetActive(false);
+    }
 
     public void setIsBomb()
     {
