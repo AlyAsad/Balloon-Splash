@@ -66,20 +66,27 @@ public class BalloonCollision : MonoBehaviour
             if (other.gameObject.CompareTag("PowerUpMultiply"))
             {
                 Destroy(other.gameObject);
-                GameObject balloon1 = Instantiate(balloonPrefab, gameObject.transform.position, Quaternion.identity);
-                GameObject balloon2 = Instantiate(balloonPrefab, gameObject.transform.position, Quaternion.identity);
+
+
+
+                Vector3 temp;
+                temp.x = 0.5f;
+                temp.y = temp.z = 0f;
+
+                GameObject balloon1 = Instantiate(balloonPrefab, gameObject.transform.position - temp, Quaternion.identity);
+                GameObject balloon2 = Instantiate(balloonPrefab, gameObject.transform.position + temp, Quaternion.identity);
 
                 Rigidbody2D originalRB = gameObject.GetComponent<Rigidbody2D>();
                 Rigidbody2D balloon1RB = balloon1.GetComponent<Rigidbody2D>();
                 Rigidbody2D balloon2RB = balloon2.GetComponent<Rigidbody2D>();
 
                 // Copy velocity and angular velocity              
-                float angle1 = 22.5f;
+                float angle1 = 0f;//22.5f;
                 Quaternion rotation1 = Quaternion.Euler(0, 0, angle1);
                 balloon1RB.velocity = rotation1 * originalRB.velocity;
                 balloon1RB.angularVelocity = originalRB.angularVelocity;
 
-                float angle2 = -22.5f;
+                float angle2 = 0f;//-22.5f;
                 Quaternion rotation2 = Quaternion.Euler(0, 0, angle2);
                 balloon2RB.velocity = rotation2 * originalRB.velocity;
                 balloon2RB.angularVelocity = originalRB.angularVelocity;
@@ -95,6 +102,11 @@ public class BalloonCollision : MonoBehaviour
                 Destroy(other.gameObject);
                 player = GameObject.FindWithTag("Player").GetComponent<Player>();
                 player.increaseHealth();
+            }
+
+            if (other.gameObject.CompareTag("PowerUpCoin"))
+            {
+                Destroy(other.gameObject);
             }
         }
 

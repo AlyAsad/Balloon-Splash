@@ -15,6 +15,7 @@ TagManager:
   - PowerUpHealth
   - Enemy_Wall
   - Player_Wall
+  - PowerUpCoin
   layers:
   - Default
   - TransparentFX
