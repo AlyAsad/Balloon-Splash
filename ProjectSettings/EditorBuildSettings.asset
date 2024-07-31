@@ -27,6 +27,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Level 5.unity
     guid: fa361e003a5cf6443825dc6dc91e55e0
   - enabled: 1
+    path: Assets/Scenes/Level 6.unity
+    guid: bd8ca7504bea38144ac5f74e9b3c1052
+  - enabled: 1
+    path: Assets/Scenes/Level 7.unity
+    guid: d52eb5679fa81a2468ed4f9d3b4bcfbd
+  - enabled: 1
     path: Assets/Scenes/Affan.unity
     guid: c2a19accfb2528a4aae25216370baa79
   - enabled: 1
