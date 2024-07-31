@@ -250,7 +250,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 639239461}
         m_TargetAssemblyTypeName: LevelSelect, Assembly-CSharp
-        m_MethodName: GoToLevel5
+        m_MethodName: GoToLevel6
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -801,8 +801,8 @@ MonoBehaviour:
   level3Button: {fileID: 1484209233}
   level4Button: {fileID: 1237319978}
   level5Button: {fileID: 1390397258}
-  level6Button: {fileID: 0}
-  level7Button: {fileID: 0}
+  level6Button: {fileID: 255903266}
+  level7Button: {fileID: 1280155138}
 --- !u!1 &653681748
 GameObject:
   m_ObjectHideFlags: 0
@@ -1967,7 +1967,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 639239461}
         m_TargetAssemblyTypeName: LevelSelect, Assembly-CSharp
-        m_MethodName: GoToLevel5
+        m_MethodName: GoToLevel7
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
