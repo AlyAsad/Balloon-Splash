@@ -51,6 +51,13 @@
         "temp/": true,
         "Temp/": true
     },
+<<<<<<< Updated upstream
     "dotnet.defaultSolution": "Balloon-Splash.sln",
     "dotnet.preferCSharpExtension": true
+=======
+    "<<<<<<<HEADdotnet.defaultSolution": "Balloon-Splash(2).sln",
+    "=======dotnet.defaultSolution": "Balloon-Splash.sln",
+    ">>>>>>>8769a4a5b47977253a237c2daa742b48daf96029dotnet.preferCSharpExtension": true,
+    "dotnet.defaultSolution": "Balloon-Splash(2).sln"
+>>>>>>> Stashed changes
 }
