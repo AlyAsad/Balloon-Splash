@@ -11,6 +11,8 @@ public class LevelSelect : MonoBehaviour
     public GameObject level3Button;
     public GameObject level4Button;
     public GameObject level5Button;
+    public GameObject level6Button;
+    public GameObject level7Button;
 
 
 
@@ -35,6 +37,14 @@ public class LevelSelect : MonoBehaviour
             
             case 4:
                 level5Button.GetComponent<Button>().interactable = false;
+                goto case 5;
+            
+            case 5:
+                level6Button.GetComponent<Button>().interactable = false;
+                goto case 6;
+            
+            case 6:
+                level7Button.GetComponent<Button>().interactable = false;
                 break;
                 
             default:
@@ -74,6 +84,16 @@ public class LevelSelect : MonoBehaviour
     public void GoToLevel5()
     {
         SceneManager.LoadSceneAsync("Level 5");
+    }
+
+    public void GoToLevel6()
+    {
+        SceneManager.LoadSceneAsync("Level 6");
+    }
+
+    public void GoToLevel7()
+    {
+        SceneManager.LoadSceneAsync("Level 7");
     }
     
 }
