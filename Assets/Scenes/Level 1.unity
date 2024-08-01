@@ -768,6 +768,7 @@ Transform:
   m_Children:
   - {fileID: 1972656787}
   - {fileID: 1540788692}
+  - {fileID: 914667762}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 1.47}
 --- !u!1 &107291765
@@ -4239,8 +4240,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 65.27, y: 2.9}
-  m_SizeDelta: {x: 165.69, y: 66.52}
+  m_AnchoredPosition: {x: -15, y: 72}
+  m_SizeDelta: {x: 54.56, y: 30.88}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &783751169
 MonoBehaviour:
@@ -4255,6 +4256,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 783751170}
+  target: {fileID: 73491964}
+  offset: {x: 0, y: -0.8, z: 0}
 --- !u!114 &783751170
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4737,7 +4740,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -2.7599945, y: 0}
+  m_AnchoredPosition: {x: -2.7599983, y: 0}
   m_SizeDelta: {x: 0.34, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &814547641
@@ -5090,17 +5093,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 914667758}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0.012827826, w: 0.99991775}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_LocalScale: {x: 0.022222223, y: 0.022222223, z: 0.02}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 783751168}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 73491964}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.89, y: -4.68}
+  m_AnchoredPosition: {x: 0.13, y: -3.07}
   m_SizeDelta: {x: 99.1639, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &974437902
@@ -10035,7 +10038,6 @@ SceneRoots:
   - {fileID: 857112113}
   - {fileID: 1216361791}
   - {fileID: 1987522597}
-  - {fileID: 914667762}
   - {fileID: 1848104911}
   - {fileID: 67732685}
   - {fileID: 73491964}
