@@ -51,14 +51,9 @@
         "temp/": true,
         "Temp/": true
     },
-<<<<<<< Updated upstream
-    "dotnet.defaultSolution": "Balloon_Splash_Mindstorm_Github.sln",
-=======
-<<<<<<< HEAD
-    "dotnet.defaultSolution": "Balloon-Splash(2).sln",
-=======
-    "dotnet.defaultSolution": "Balloon_Splash_Mindstorm_Github.sln",
->>>>>>> 06cfaf1e4fdb1e1485c1791da15d7a0daa6c1b03
->>>>>>> Stashed changes
-    "dotnet.preferCSharpExtension": true
+    "<<<<<<<Updatedupstreamdotnet.defaultSolution": "Balloon_Splash_Mindstorm_Github.sln",
+    "=======<<<<<<<HEADdotnet.defaultSolution": "Balloon-Splash(2).sln",
+    "=======dotnet.defaultSolution": "Balloon_Splash_Mindstorm_Github.sln",
+    ">>>>>>>06cfaf1e4fdb1e1485c1791da15d7a0daa6c1b03>>>>>>>Stashedchangesdotnet.preferCSharpExtension": true,
+    "dotnet.defaultSolution": "Balloon-Splash(2).sln"
 }
