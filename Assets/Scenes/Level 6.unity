@@ -3204,6 +3204,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1012803500609232735, guid: 667b28b053dba3b47be1120a2cb22084, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 68061a1fd9717924b84c4ed4cb5e9aaf, type: 3}
     - target: {fileID: 2583768594824576360, guid: 667b28b053dba3b47be1120a2cb22084, type: 3}
       propertyPath: m_Name
       value: bgCanvas
