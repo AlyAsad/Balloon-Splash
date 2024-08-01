@@ -307,7 +307,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a16c448d030e16b49a7e5dcdb72487e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyDamage: 2
+  enemyDamage: 4
   playerDamage: 1
   maxWallBounce: 3
   balloonExplosionTime: 10
