@@ -9,17 +9,17 @@ public class EnemyAi : MonoBehaviour
     [SerializeField] ParticleSystem deathAnimation;
     [SerializeField] Vector3 offset;
     bool death = false;
-    
+
 
     private void Awake()
     {
         healthBar = GetComponentInChildren<EnemyHealthBar>();
-        
+
     }
 
     private void Start()
     {
-        
+
         healthBar.UpdateHealthBar(health, maxHealth);
     }
 
@@ -27,7 +27,7 @@ public class EnemyAi : MonoBehaviour
     {
         if (death)
         {
-            gameObject.transform.localScale -= new Vector3(0.001f, 0.001f, 0f);
+            gameObject.transform.localScale -= new Vector3(0.002f, 0.002f, 0f);
             if (gameObject.transform.localScale.x <= 0) Destroy(gameObject);
         }
     }
