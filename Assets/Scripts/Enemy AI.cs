@@ -23,11 +23,11 @@ public class EnemyAi : MonoBehaviour
         healthBar.UpdateHealthBar(health, maxHealth);
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (death)
         {
-            gameObject.transform.localScale -= new Vector3(0.002f, 0.002f, 0f);
+            gameObject.transform.localScale -= new Vector3(0.003f, 0.003f, 0f);
             if (gameObject.transform.localScale.x <= 0) Destroy(gameObject);
         }
     }
