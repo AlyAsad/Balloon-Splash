@@ -389,9 +389,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.36}
+  m_Offset: {x: -0.08, y: -0.36}
   serializedVersion: 2
-  m_Radius: 1.5
+  m_Radius: 0.8
 --- !u!114 &73491959
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -633,7 +633,7 @@ Transform:
   m_GameObject: {fileID: 73491957}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0.012827826, w: 0.99991775}
-  m_LocalPosition: {x: -0, y: -3, z: 0}
+  m_LocalPosition: {x: 0.001, y: -3.05, z: 0}
   m_LocalScale: {x: 0.45, y: 0.45, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2943,9 +2943,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.58, y: 3.71}
   serializedVersion: 2
-  m_Radius: 8.24
+  m_Radius: 4.5
 --- !u!114 &830144000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2964,7 +2964,7 @@ MonoBehaviour:
   throwPoint: {fileID: 1292257693}
   enemyBalloonPrefab: {fileID: 1839459383788634413, guid: dd2ff7607c38caa429a96f56c75d2f02, type: 3}
   enemyRb: {fileID: 830144001}
-  throwingCone: 0.2
+  throwingCone: 0.1
   disp: {x: 0, y: -0.7, z: 0}
   maxForce: 15
   muzzleRecoil: {fileID: 1462095506}
