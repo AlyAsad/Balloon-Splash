@@ -6,15 +6,21 @@ public class Player : MonoBehaviour
 {
     [SerializeField] float health = 10f, maxHealth = 10f;
     [SerializeField] PlayerHealthBar healthBar;
+    [SerializeField] ParticleSystem deathAnimation;
+    bool death = false;
     private void Start()
     {
         healthBar.UpdateHealthBar(health, maxHealth);
     }
 
     // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
-
+        if (death)
+        {
+            gameObject.transform.localScale -= new Vector3(0.02f, 0.02f, 0f);
+            if (gameObject.transform.localScale.x <= 0) Destroy(gameObject);
+        }
     }
 
     public void TakeDamage(float damageAmount)
@@ -24,13 +30,20 @@ public class Player : MonoBehaviour
 
         if (health <= 0)
         {
-            Die();
+            death = true;
+            StartCoroutine(Die());
         }
 
     }
-    void Die()
+    IEnumerator Die()
     {
-        Destroy(gameObject);
+        deathAnimation.gameObject.SetActive(true);
+        deathAnimation.Play();
+        yield return new WaitForSeconds(1f);
+        deathAnimation.Stop();
+        deathAnimation.gameObject.SetActive(false);
+
+
     }
 
     public void increaseHealth()

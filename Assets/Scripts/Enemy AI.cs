@@ -52,13 +52,6 @@ public class EnemyAi : MonoBehaviour
         deathAnimation.Stop();
         deathAnimation.gameObject.SetActive(false);
 
-
-
-
-        //Instantiate(deathAnimation, gameObject.transform.position + offset, Quaternion.identity);
-        //deathAnimation.();
-        // yield return new WaitForSeconds(0.8f);
-        //Destroy(gameObject);
     }
 
 
