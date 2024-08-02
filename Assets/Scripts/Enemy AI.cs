@@ -46,9 +46,18 @@ public class EnemyAi : MonoBehaviour
     }
     IEnumerator Die()
     {
-        Instantiate(deathAnimation, gameObject.transform.position + offset, Quaternion.identity);
+        deathAnimation.gameObject.SetActive(true);
         deathAnimation.Play();
-        yield return new WaitForSeconds(0.8f);
+        yield return new WaitForSeconds(1f);
+        deathAnimation.Stop();
+        deathAnimation.gameObject.SetActive(false);
+
+
+
+
+        //Instantiate(deathAnimation, gameObject.transform.position + offset, Quaternion.identity);
+        //deathAnimation.();
+        // yield return new WaitForSeconds(0.8f);
         //Destroy(gameObject);
     }
 
