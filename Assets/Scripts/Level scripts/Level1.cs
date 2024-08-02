@@ -13,6 +13,7 @@ public class Level1 : MonoBehaviour
 
     private bool lvlPassed = false, lvlFailed = false;
 
+
     private void Update()
     {
         if (lvlPassed || lvlFailed) return;
