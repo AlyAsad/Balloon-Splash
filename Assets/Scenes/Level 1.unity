@@ -4953,6 +4953,7 @@ MonoBehaviour:
   health: 10
   maxHealth: 10
   healthBar: {fileID: 0}
+  deathAnimation: {fileID: 7827970104839328574, guid: f83e12b230d3f4c4fa54cbe9299381ea, type: 3}
 --- !u!4 &830144004
 Transform:
   m_ObjectHideFlags: 0
