@@ -25,12 +25,19 @@ public class BalloonCollision : MonoBehaviour
     public GameObject balloonPrefab;
     public GameObject waterBombPrefab;
 
+    [SerializeField] AudioClip splash, bounce;
+    
     private AudioSource audioSource;
+
+    private GameObject trail;
+    
+
 
     private void Start()
     {
-        audioSource = GetComponent<AudioSource>(); // Get the AudioSource component
         //Destroy(gameObject, balloonExplosionTime);
+        audioSource = GetComponent<AudioSource>();
+        trail = transform.GetChild(0).gameObject;
     }
 
     private void Update()
@@ -181,8 +188,7 @@ public class BalloonCollision : MonoBehaviour
             waterBombRecoilInstance.Play();
             Destroy(waterBombRecoilInstance, 1f);
 
-            PlaySplashSound(); // Play splash sound
-            Destroy(gameObject);
+            balloonDestroy();
         }
         else if (other.gameObject.CompareTag("Enemy_Balloon"))
         {
@@ -194,8 +200,7 @@ public class BalloonCollision : MonoBehaviour
             waterBombRecoilInstance.Play();
             Destroy(waterBombRecoilInstance, 1f);
 
-            PlaySplashSound(); // Play splash sound
-            Destroy(gameObject);
+            balloonDestroy();
         }
     }
 
@@ -210,8 +215,11 @@ public class BalloonCollision : MonoBehaviour
             playerBalloonSplashInstance.Play();
             Destroy(playerBalloonSplashInstance, 1f);
 
-            PlaySplashSound(); // Play splash sound
-            Destroy(gameObject);
+
+
+            balloonDestroy();
+
+
         }
         else if (other.gameObject.CompareTag("Enemy_Balloon"))
         {
@@ -219,8 +227,7 @@ public class BalloonCollision : MonoBehaviour
             playerBalloonSplashInstance.Play();
             Destroy(playerBalloonSplashInstance, 1f);
 
-            PlaySplashSound(); // Play splash sound
-            Destroy(gameObject);
+            balloonDestroy();
         }
         else if (other.gameObject.CompareTag("Player_Balloon"))
         {
@@ -228,8 +235,7 @@ public class BalloonCollision : MonoBehaviour
             playerBalloonSplashInstance.Play();
             Destroy(playerBalloonSplashInstance, 1f);
 
-            PlaySplashSound(); // Play splash sound
-            Destroy(gameObject);
+            balloonDestroy();
         }
         else if (other.gameObject.CompareTag("Enemy_Wall"))
         {
@@ -237,8 +243,7 @@ public class BalloonCollision : MonoBehaviour
             playerBalloonSplashInstance.Play();
             Destroy(playerBalloonSplashInstance, 1f);
 
-            PlaySplashSound(); // Play splash sound
-            Destroy(gameObject);
+            balloonDestroy();
         }
         else if (other.gameObject.CompareTag("Player"))
         {
@@ -246,8 +251,7 @@ public class BalloonCollision : MonoBehaviour
             playerBalloonSplashInstance.Play();
             Destroy(playerBalloonSplashInstance, 1f);
 
-            PlaySplashSound(); // Play splash sound
-            Destroy(gameObject);
+            balloonDestroy();
         }
     }
 
@@ -262,8 +266,7 @@ public class BalloonCollision : MonoBehaviour
             enemyBalloonSplashInstance.Play();
             Destroy(enemyBalloonSplashInstance, 1f);
 
-            PlaySplashSound(); // Play splash sound
-            Destroy(gameObject);
+            balloonDestroy();
         }
         else if (other.gameObject.CompareTag("Player_Balloon"))
         {
@@ -271,8 +274,7 @@ public class BalloonCollision : MonoBehaviour
             enemyBalloonSplashInstance.Play();
             Destroy(enemyBalloonSplashInstance, 1f);
 
-            PlaySplashSound(); // Play splash sound
-            Destroy(gameObject);
+            balloonDestroy();
         }
         else if (other.gameObject.CompareTag("Water_Bomb"))
         {
@@ -280,8 +282,7 @@ public class BalloonCollision : MonoBehaviour
             enemyBalloonSplashInstance.Play();
             Destroy(enemyBalloonSplashInstance, 1f);
 
-            PlaySplashSound(); // Play splash sound
-            Destroy(gameObject);
+            balloonDestroy();
         }
         else if (other.gameObject.CompareTag("Player_Wall"))
         {
@@ -289,8 +290,7 @@ public class BalloonCollision : MonoBehaviour
             enemyBalloonSplashInstance.Play();
             Destroy(enemyBalloonSplashInstance, 1f);
 
-            PlaySplashSound(); // Play splash sound
-            Destroy(gameObject);
+            balloonDestroy();
         }
         else if (other.gameObject.CompareTag("Enemy"))
         {
@@ -298,16 +298,7 @@ public class BalloonCollision : MonoBehaviour
             enemyBalloonSplashInstance.Play();
             Destroy(enemyBalloonSplashInstance, 1f);
 
-            PlaySplashSound(); // Play splash sound
-            Destroy(gameObject);
-        }
-    }
-
-    private void PlaySplashSound()
-    {
-        if (audioSource != null && audioSource.clip != null)
-        {
-            audioSource.Play();
+            balloonDestroy();
         }
     }
 
@@ -319,6 +310,20 @@ public class BalloonCollision : MonoBehaviour
     private void makeTeleportedActuallyFalse()
     {
         justTeleported = false;
+    }
+
+
+    private void balloonDestroy() {
+        playAudio(splash);
+        GetComponent<CircleCollider2D>().enabled = false;
+        GetComponent<SpriteRenderer>().enabled = false;
+        Destroy(trail);
+        Destroy(gameObject, 1f);
+    }
+
+
+    private void playAudio(AudioClip clip) {
+        audioSource.PlayOneShot(clip, 1f);
     }
 }
 
