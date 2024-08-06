@@ -2104,6 +2104,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 727487892}
   m_CullTransparentMesh: 1
+--- !u!1 &735629089
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 735629090}
+  m_Layer: 0
+  m_Name: PointToThrow1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &735629090
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 735629089}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.9, y: 0.03, z: 0.14648256}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &744739945
 GameObject:
   m_ObjectHideFlags: 0
@@ -2152,8 +2183,9 @@ GameObject:
   - component: {fileID: 786548452}
   - component: {fileID: 786548451}
   - component: {fileID: 786548450}
-  - component: {fileID: 786548449}
   - component: {fileID: 786548448}
+  - component: {fileID: 786548454}
+  - component: {fileID: 786548455}
   m_Layer: 3
   m_Name: Enemy
   m_TagString: Enemy
@@ -2196,28 +2228,6 @@ CircleCollider2D:
   m_Offset: {x: -0.58, y: 3.71}
   serializedVersion: 2
   m_Radius: 4.5
---- !u!114 &786548449
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 786548447}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ca300dc251cccb4f870b30edd033d98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  power: 5
-  maxDrag: 5
-  recoilPercent: 0.2
-  throwPoint: {fileID: 1970988291}
-  enemyBalloonPrefab: {fileID: 1839459383788634413, guid: dd2ff7607c38caa429a96f56c75d2f02, type: 3}
-  enemyRb: {fileID: 786548450}
-  throwingCone: 0.1
-  disp: {x: 0, y: -0.7, z: 0}
-  maxForce: 15
-  muzzleRecoil: {fileID: 982225545}
 --- !u!50 &786548450
 Rigidbody2D:
   serializedVersion: 4
@@ -2333,6 +2343,50 @@ Transform:
   - {fileID: 982225546}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &786548454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 786548447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6a862049b740474c8077483a8814c04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  power: 10
+  maxDrag: 5
+  recoilPercent: 0.2
+  throwPoint: {fileID: 1970988291}
+  enemyBalloonPrefab: {fileID: 1839459383788634413, guid: dd2ff7607c38caa429a96f56c75d2f02, type: 3}
+  enemyRb: {fileID: 786548450}
+  throwingCone: 0
+  maxForce: 15
+  muzzleRecoil: {fileID: 982225545}
+  PlaceToThrow1: {fileID: 1474194072}
+--- !u!114 &786548455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 786548447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ca300dc251cccb4f870b30edd033d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  power: 10
+  maxDrag: 5
+  recoilPercent: 0.2
+  throwPoint: {fileID: 1970988291}
+  enemyBalloonPrefab: {fileID: 1839459383788634413, guid: dd2ff7607c38caa429a96f56c75d2f02, type: 3}
+  enemyRb: {fileID: 786548450}
+  throwingCone: 0
+  disp: {x: 0, y: 0, z: 0}
+  maxForce: 10
+  muzzleRecoil: {fileID: 982225545}
 --- !u!1 &833182970
 GameObject:
   m_ObjectHideFlags: 0
@@ -4052,6 +4106,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1432669882}
   m_CullTransparentMesh: 1
+--- !u!1 &1474194072
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1474194073}
+  m_Layer: 0
+  m_Name: PointToThrow2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1474194073
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1474194072}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.97, y: 0.01, z: 0.14648256}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1495906700
 GameObject:
   m_ObjectHideFlags: 0
@@ -6202,6 +6287,7 @@ GameObject:
   - component: {fileID: 1876462199}
   - component: {fileID: 1876462198}
   - component: {fileID: 1876462197}
+  - component: {fileID: 1876462203}
   m_Layer: 3
   m_Name: Enemy (1)
   m_TagString: Enemy
@@ -6381,6 +6467,28 @@ Transform:
   - {fileID: 1755563391}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1876462203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1876462196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6a862049b740474c8077483a8814c04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  power: 10
+  maxDrag: 5
+  recoilPercent: 0.2
+  throwPoint: {fileID: 302181531}
+  enemyBalloonPrefab: {fileID: 1839459383788634413, guid: dd2ff7607c38caa429a96f56c75d2f02, type: 3}
+  enemyRb: {fileID: 1876462199}
+  throwingCone: 0
+  maxForce: 10
+  muzzleRecoil: {fileID: 1755563390}
+  PlaceToThrow1: {fileID: 735629089}
 --- !u!1 &1931861389
 GameObject:
   m_ObjectHideFlags: 0
@@ -7685,3 +7793,5 @@ SceneRoots:
   - {fileID: 117748654}
   - {fileID: 492651115}
   - {fileID: 1931861390}
+  - {fileID: 735629090}
+  - {fileID: 1474194073}
