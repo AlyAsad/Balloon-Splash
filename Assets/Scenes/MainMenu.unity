@@ -933,7 +933,7 @@ MonoBehaviour:
   fb3: {fileID: 3826316765169162103, guid: 983f88ea27e9e8546886e385c0d8573f, type: 3}
   fb4: {fileID: 7004700007247462889, guid: 0f8e60dba99ed414bb2c7e9a7354c3ef, type: 3}
   fb5: {fileID: 2630626371560534821, guid: c16037d13c66db147b332484826650d5, type: 3}
-  fb6: {fileID: 2499671155248128377, guid: 1315a643e7cab7640a55da0e55e7d57c, type: 3}
+  fb6: {fileID: 8484484681068639601, guid: c3b1ebf5876bd58429c13cbdcb97102f, type: 3}
 --- !u!1 &1206524517
 GameObject:
   m_ObjectHideFlags: 0

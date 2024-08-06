@@ -13,14 +13,15 @@ public class Floating_Balloon_Spawner : MonoBehaviour
     public GameObject fb5;
     public GameObject fb6;
 
-    private float GravityScale;
     private Vector3 randomSpawnPosition;
     private int magicNumber;
     private GameObject newBalloon;
     private Rigidbody2D rb2d;
-    private int maxTime = 3;
+    private int maxTime = 6;
     private int currentTime = 0;
     private float randomSize;
+    private float randomForce;
+    private float randomOpacity;
 
     void Start()
     {
@@ -38,9 +39,10 @@ public class Floating_Balloon_Spawner : MonoBehaviour
         currentTime = 0;
 
         magicNumber = Random.Range(1, 7);
-        GravityScale = Random.Range(-0.35f, -0.2f);
         randomSize = Random.Range(0.5f, 1f);
-        randomSpawnPosition = new Vector3(Random.Range(-2f, 3f), Random.Range(-7f, -11f), 0);
+        randomSpawnPosition = new Vector3(Random.Range(-2.5f, 3f), -7f, 0);
+        randomForce = Random.Range(2f, 4f);
+        randomOpacity = Random.Range(0.25f, 0.4f);
 
 
         if (magicNumber == 1)
@@ -74,9 +76,16 @@ public class Floating_Balloon_Spawner : MonoBehaviour
         }
 
         rb2d = newBalloon.GetComponent<Rigidbody2D>();
-        rb2d.gravityScale = GravityScale;
+        rb2d.gravityScale = 0f;
         newBalloon.transform.localScale = new Vector3(randomSize, randomSize, 0f);
+        rb2d.velocity = new Vector2(0, randomForce);
 
-        Destroy(newBalloon, 4f);
+
+        Renderer renderer = newBalloon.GetComponent<Renderer>();
+        Color color = renderer.material.color;
+        color.a = randomOpacity;
+        renderer.material.color = color;
+
+        Destroy(newBalloon, 10f);
     }
 }
