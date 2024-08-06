@@ -3611,8 +3611,8 @@ GameObject:
   - component: {fileID: 1114946546}
   - component: {fileID: 1114946545}
   - component: {fileID: 1114946544}
-  - component: {fileID: 1114946543}
   - component: {fileID: 1114946542}
+  - component: {fileID: 1114946548}
   m_Layer: 3
   m_Name: Enemy
   m_TagString: Enemy
@@ -3655,28 +3655,6 @@ CircleCollider2D:
   m_Offset: {x: -0.58, y: 3.71}
   serializedVersion: 2
   m_Radius: 4.5
---- !u!114 &1114946543
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1114946541}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ca300dc251cccb4f870b30edd033d98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  power: 5
-  maxDrag: 5
-  recoilPercent: 0.2
-  throwPoint: {fileID: 1248526956}
-  enemyBalloonPrefab: {fileID: 1839459383788634413, guid: dd2ff7607c38caa429a96f56c75d2f02, type: 3}
-  enemyRb: {fileID: 1114946544}
-  throwingCone: 0.1
-  disp: {x: 0, y: -0.7, z: 0}
-  maxForce: 15
-  muzzleRecoil: {fileID: 855471917}
 --- !u!50 &1114946544
 Rigidbody2D:
   serializedVersion: 4
@@ -3792,6 +3770,29 @@ Transform:
   - {fileID: 855471918}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1114946548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1114946541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91e17a7f9813d8e429612788308619df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  power: 10
+  maxDrag: 5
+  recoilPercent: 0.2
+  throwPoint: {fileID: 1248526956}
+  enemyBalloonPrefab: {fileID: 1839459383788634413, guid: dd2ff7607c38caa429a96f56c75d2f02, type: 3}
+  enemyRb: {fileID: 1114946544}
+  throwingCone: 0.1
+  maxForce: 15
+  muzzleRecoil: {fileID: 855471917}
+  PlaceToThrow1: {fileID: 1651950966}
+  PlaceToThrow2: {fileID: 2048202287}
 --- !u!1 &1144388869
 GameObject:
   m_ObjectHideFlags: 0
@@ -5360,6 +5361,37 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &1651950966
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1651950967}
+  m_Layer: 0
+  m_Name: PlaceToThrow1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1651950967
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1651950966}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.89, y: 0.02, z: 0.04851761}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1684230059
 GameObject:
   m_ObjectHideFlags: 0
@@ -6372,6 +6404,37 @@ Transform:
   - {fileID: 57956814}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2048202287
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2048202288}
+  m_Layer: 0
+  m_Name: PlaceToThrow2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2048202288
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2048202287}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.957, y: -0.002, z: 0.04851761}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2052527254
 GameObject:
   m_ObjectHideFlags: 0
@@ -6703,3 +6766,5 @@ SceneRoots:
   - {fileID: 325100500}
   - {fileID: 184684767}
   - {fileID: 2032474826}
+  - {fileID: 1651950967}
+  - {fileID: 2048202288}
