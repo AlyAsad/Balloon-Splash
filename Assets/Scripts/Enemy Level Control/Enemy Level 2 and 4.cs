@@ -18,6 +18,9 @@ public class EnemyLevel2 : MonoBehaviour
     [SerializeField] public GameObject PlaceToThrow2;
     private Transform player;
 
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip shootingSound;
+    
     private void Start()
     {
         player = GameObject.FindWithTag("Player").transform;
@@ -68,7 +71,10 @@ public class EnemyLevel2 : MonoBehaviour
         // Instantiate and throw the balloon
         GameObject balloon = Instantiate(enemyBalloonPrefab, throwPoint.position, throwPoint.rotation);
         Rigidbody2D rb = balloon.GetComponent<Rigidbody2D>();
-
+        if (audioSource != null && shootingSound != null)
+        {
+            audioSource.PlayOneShot(shootingSound);
+        }
 
         StartCoroutine(HandleMuzzleRecoil());
 

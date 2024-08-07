@@ -15,6 +15,9 @@ public class EnemyBalloonController : MonoBehaviour
     [SerializeField] ParticleSystem muzzleRecoil;
     private Transform player;
 
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip shootingSound;
+
     private void Start()
     {
         player = GameObject.FindWithTag("Player").transform;
@@ -52,7 +55,10 @@ public class EnemyBalloonController : MonoBehaviour
         // Instantiate and throw the balloon
         GameObject balloon = Instantiate(enemyBalloonPrefab, throwPoint.position + disp, throwPoint.rotation);
         Rigidbody2D rb = balloon.GetComponent<Rigidbody2D>();
-
+        if (audioSource != null && shootingSound != null)
+        {
+            audioSource.PlayOneShot(shootingSound);
+        }
 
         StartCoroutine(HandleMuzzleRecoil());
 
