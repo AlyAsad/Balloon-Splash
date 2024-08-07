@@ -106,6 +106,7 @@ public class BalloonCollision : MonoBehaviour
 
             if (other.gameObject.CompareTag("PowerUpCoin"))
             {
+                PlayPowerupSound();
                 Destroy(other.gameObject);
             }
         }
@@ -323,6 +324,14 @@ public class BalloonCollision : MonoBehaviour
 
     private void playAudio(AudioClip clip) {
         audioSource.PlayOneShot(clip, 1f);
+    }
+
+    private void PlayPowerupSound()
+    {
+        if (audioSource != null && powerup != null)
+        {
+            audioSource.PlayOneShot(powerup);
+        }
     }
 }
 

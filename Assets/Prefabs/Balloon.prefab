@@ -320,10 +320,9 @@ MonoBehaviour:
   justTeleported: 0
   balloonPrefab: {fileID: 3924599004871305105}
   waterBombPrefab: {fileID: 3924599004871305105, guid: 1f46dec5ecd515444b61a77f107f16ce, type: 3}
-  splashObject: {fileID: 0}
-  bounceObject: {fileID: 0}
   splash: {fileID: 8300000, guid: 0fc356f967418854a9509bf4ace74cfc, type: 3}
   bounce: {fileID: 8300000, guid: c4cab884a033b2f4c9a63e5aee629ba8, type: 3}
+  powerup: {fileID: 8300000, guid: 5df984907239f314697c084872ea2ee9, type: 3}
 --- !u!82 &8234579820641117087
 AudioSource:
   m_ObjectHideFlags: 0

@@ -814,6 +814,8 @@ MonoBehaviour:
   disp: {x: 0, y: -0.7, z: 0}
   maxForce: 15
   muzzleRecoil: {fileID: 550208086}
+  audioSource: {fileID: 0}
+  shootingSound: {fileID: 0}
 --- !u!50 &192855443
 Rigidbody2D:
   serializedVersion: 4
@@ -2126,6 +2128,8 @@ MonoBehaviour:
   disp: {x: 0, y: -0.7, z: 0}
   maxForce: 15
   muzzleRecoil: {fileID: 157350044}
+  audioSource: {fileID: 0}
+  shootingSound: {fileID: 0}
 --- !u!50 &545273446
 Rigidbody2D:
   serializedVersion: 4
@@ -6395,6 +6399,8 @@ MonoBehaviour:
   disp: {x: 0, y: -0.7, z: 0}
   maxForce: 15
   muzzleRecoil: {fileID: 1445399449}
+  audioSource: {fileID: 0}
+  shootingSound: {fileID: 0}
 --- !u!50 &1916742786
 Rigidbody2D:
   serializedVersion: 4
