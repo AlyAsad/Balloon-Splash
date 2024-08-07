@@ -1245,6 +1245,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 252937008}
   m_CullTransparentMesh: 1
+--- !u!1 &261815255 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8183623406422037396, guid: 818925f5049132f4ab044234c29e93b3, type: 3}
+  m_PrefabInstance: {fileID: 252376947}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &315859278
 GameObject:
   m_ObjectHideFlags: 0
@@ -4045,7 +4050,7 @@ MonoBehaviour:
   LevelCompleteUI: {fileID: 178747962}
   LevelFailedUI: {fileID: 1282318023}
   enemy: {fileID: 830143998}
-  player: {fileID: 0}
+  player: {fileID: 261815255}
 --- !u!114 &1590998840
 MonoBehaviour:
   m_ObjectHideFlags: 0

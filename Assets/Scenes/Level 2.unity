@@ -4229,7 +4229,7 @@ MonoBehaviour:
   LevelCompleteUI: {fileID: 2052527254}
   LevelFailedUI: {fileID: 536048919}
   enemy: {fileID: 1114946541}
-  player: {fileID: 0}
+  player: {fileID: 2030384285}
 --- !u!114 &1595380567
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5475,6 +5475,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 818925f5049132f4ab044234c29e93b3, type: 3}
+--- !u!1 &2030384285 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8183623406422037396, guid: 818925f5049132f4ab044234c29e93b3, type: 3}
+  m_PrefabInstance: {fileID: 2030384284}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2032474825
 GameObject:
   m_ObjectHideFlags: 0
