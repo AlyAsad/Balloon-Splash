@@ -27,7 +27,7 @@ public class ThrowingBalloon : MonoBehaviour
 
     [SerializeField] private float minMagnitudeForBalloon;
 
-    [SerializeField] int numberOfThrowsForWaterBomb = 2;
+    [SerializeField] int numberOfThrowsForWaterBomb = 3;
 
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip shootingSound;
