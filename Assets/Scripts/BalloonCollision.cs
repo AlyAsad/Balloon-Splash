@@ -25,10 +25,8 @@ public class BalloonCollision : MonoBehaviour
     public GameObject balloonPrefab;
     public GameObject waterBombPrefab;
 
-    [SerializeField] AudioClip splash, bounce, powerup;
-    
     private AudioSource audioSource;
-
+    [SerializeField] AudioClip splash, bounce, powerup, bomb;
     private GameObject trail;
     
 
@@ -189,6 +187,7 @@ public class BalloonCollision : MonoBehaviour
             Destroy(waterBombRecoilInstance, 1f);
 
             balloonDestroy();
+
         }
         else if (other.gameObject.CompareTag("Enemy_Balloon"))
         {
@@ -321,6 +320,14 @@ public class BalloonCollision : MonoBehaviour
         Destroy(gameObject, 1f);
     }
 
+    private void bombDestroy() {
+        playAudio(bomb);
+        GetComponent<CircleCollider2D>().enabled = false;
+        GetComponent<SpriteRenderer>().enabled = false;
+        Destroy(trail);
+        Destroy(gameObject, 1f);
+    }
+
 
     private void playAudio(AudioClip clip) {
         audioSource.PlayOneShot(clip, 1f);
@@ -333,6 +340,8 @@ public class BalloonCollision : MonoBehaviour
             audioSource.PlayOneShot(powerup);
         }
     }
+
+    
 }
 
 

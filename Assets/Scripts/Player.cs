@@ -7,6 +7,9 @@ public class Player : MonoBehaviour
     [SerializeField] float health = 10f, maxHealth = 10f;
     [SerializeField] PlayerHealthBar healthBar;
     [SerializeField] ParticleSystem deathAnimation;
+
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip deathSound;
     bool death = false;
     private void Start()
     {
@@ -37,12 +40,16 @@ public class Player : MonoBehaviour
     }
     IEnumerator Die()
     {
+        if (audioSource != null && deathSound != null)
+        {
+            audioSource.PlayOneShot(deathSound);
+        }
         deathAnimation.gameObject.SetActive(true);
         deathAnimation.Play();
         yield return new WaitForSeconds(1f);
         deathAnimation.Stop();
         deathAnimation.gameObject.SetActive(false);
-
+        
 
     }
 
