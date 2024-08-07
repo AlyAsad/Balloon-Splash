@@ -25,7 +25,7 @@ public class BalloonCollision : MonoBehaviour
     public GameObject balloonPrefab;
     public GameObject waterBombPrefab;
 
-    [SerializeField] AudioClip splash, bounce;
+    [SerializeField] AudioClip splash, bounce, powerup;
     
     private AudioSource audioSource;
 
