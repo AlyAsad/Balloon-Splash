@@ -10,6 +10,7 @@ public class Level7 : MonoBehaviour
     [SerializeField] private GameObject LevelFailedUI;
     [SerializeField] private GameObject enemy1;
     [SerializeField] private GameObject enemy2;
+    [SerializeField] private GameObject enemy3;
     [SerializeField] private GameObject player;
 
     private bool lvlPassed = false, lvlFailed = false;
@@ -20,13 +21,15 @@ public class Level7 : MonoBehaviour
         if (lvlPassed || lvlFailed) return;
 
         // if enemy died, level passed
-        if (enemy1 == null && enemy2 == null) {
+        if (enemy1 == null && enemy2 == null && enemy3 == null)
+        {
             lvlPassed = true;
             levelPassed();
         }
 
         // if player died, level failed
-        else if (player == null) {
+        else if (player == null)
+        {
             lvlFailed = true;
             levelFailed();
         }
@@ -34,13 +37,14 @@ public class Level7 : MonoBehaviour
     }
 
 
-    public void levelPassed() 
-    {   
+    public void levelPassed()
+    {
         LevelCompleteUI.SetActive(true);
         Time.timeScale = 0f;
         PauseMenu.gameIsPaused = true;
 
-        if (PlayerPrefs.GetInt("Unlocked Level", 1) == 7) {
+        if (PlayerPrefs.GetInt("Unlocked Level", 1) == 7)
+        {
             PlayerPrefs.SetInt("Unlocked Level", 8);
             PlayerPrefs.Save();
         }
