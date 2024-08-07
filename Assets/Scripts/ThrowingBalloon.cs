@@ -1,6 +1,4 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ThrowingBalloon : MonoBehaviour
@@ -31,11 +29,12 @@ public class ThrowingBalloon : MonoBehaviour
 
     [SerializeField] int numberOfThrowsForWaterBomb = 2;
 
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip shootingSound;
 
     // Update is called once per frame
     private void Update()
     {
-
         // IF GAME IS PAUSED DONT TAKE INPUT
         if (PauseMenu.gameIsPaused == true)
         {
@@ -43,18 +42,15 @@ public class ThrowingBalloon : MonoBehaviour
             return;
         }
 
-
         if (waitFrames > 0)
         {
             waitFrames--;
             return;
         }
 
-
         if (Input.touchCount > 0)
         {
             touch = Input.GetTouch(0);
-
 
             if (touch.phase == TouchPhase.Began)
             {
@@ -71,7 +67,6 @@ public class ThrowingBalloon : MonoBehaviour
                 DragRelease();
             }
         }
-
     }
 
     void DragStart()
@@ -89,6 +84,7 @@ public class ThrowingBalloon : MonoBehaviour
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90;
         PlayerRigidBody.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward * Time.deltaTime);
     }
+    
     void Dragging()
     {
         draggingPos = Camera.main.ScreenToWorldPoint(touch.position);
@@ -96,9 +92,7 @@ public class ThrowingBalloon : MonoBehaviour
         lr.positionCount = 2;
         lr.SetPosition(1, draggingPos);
 
-
         Vector3 resultantDirection = dragStartPos - draggingPos;
-
 
         Vector3 direction;
         direction.x = resultantDirection.x - throwPoint.position.x;
@@ -108,6 +102,7 @@ public class ThrowingBalloon : MonoBehaviour
         float angle = Mathf.Atan2(resultantDirection.y, resultantDirection.x) * Mathf.Rad2Deg - 90;
         PlayerRigidBody.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward * Time.deltaTime);
     }
+
     void DragRelease()
     {
         lr.positionCount = 0;
@@ -119,10 +114,8 @@ public class ThrowingBalloon : MonoBehaviour
         Vector3 clampedForce = Vector3.ClampMagnitude(force, maxDrag) * power;
         clampedForce = Vector3.ClampMagnitude(clampedForce, maxForce);
 
-
         // a check so player doesnt make balloon with no speed
         if (force.magnitude < minMagnitudeForBalloon) return;
-
 
         GameObject balloon;
         if (!isBomb) balloon = Instantiate(balloonPrefab, throwPoint.position, throwPoint.rotation);
@@ -146,11 +139,13 @@ public class ThrowingBalloon : MonoBehaviour
         StartCoroutine(HandleMuzzleRecoil());
 
         PlayerRigidBody.AddForce(playerClampedForce, ForceMode2D.Impulse);
-
-
-
-
         rb.AddForce(clampedForce, ForceMode2D.Impulse);
+
+        // Play shooting sound
+        if (audioSource != null && shootingSound != null)
+        {
+            audioSource.PlayOneShot(shootingSound);
+        }
     }
 
     IEnumerator HandleMuzzleRecoil()
@@ -166,5 +161,4 @@ public class ThrowingBalloon : MonoBehaviour
     {
         isBomb = true;
     }
-
 }

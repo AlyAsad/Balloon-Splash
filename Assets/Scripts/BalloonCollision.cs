@@ -35,7 +35,6 @@ public class BalloonCollision : MonoBehaviour
 
     private void Start()
     {
-        //Destroy(gameObject, balloonExplosionTime);
         audioSource = GetComponent<AudioSource>();
         trail = transform.GetChild(0).gameObject;
     }
