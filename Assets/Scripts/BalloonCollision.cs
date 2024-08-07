@@ -28,7 +28,7 @@ public class BalloonCollision : MonoBehaviour
     private AudioSource audioSource;
     [SerializeField] AudioClip splash, bounce, powerup, bomb;
     private GameObject trail;
-    
+
 
 
     private void Start()
@@ -176,7 +176,7 @@ public class BalloonCollision : MonoBehaviour
         if (other.gameObject.CompareTag("Enemy"))
         {
             enemy = other.gameObject.GetComponent<EnemyAi>();
-            enemy.TakeDamage((float)1.5 * enemyDamage);
+            enemy.TakeDamage((float)5 * enemyDamage);
 
             ParticleSystem waterBombSplashInstance = Instantiate(waterBombSplash, gameObject.transform.position, Quaternion.identity);
             waterBombSplashInstance.Play();
@@ -312,7 +312,8 @@ public class BalloonCollision : MonoBehaviour
     }
 
 
-    private void balloonDestroy() {
+    private void balloonDestroy()
+    {
         playAudio(splash);
         GetComponent<CircleCollider2D>().enabled = false;
         GetComponent<SpriteRenderer>().enabled = false;
@@ -320,7 +321,8 @@ public class BalloonCollision : MonoBehaviour
         Destroy(gameObject, 1f);
     }
 
-    private void bombDestroy() {
+    private void bombDestroy()
+    {
         playAudio(bomb);
         GetComponent<CircleCollider2D>().enabled = false;
         GetComponent<SpriteRenderer>().enabled = false;
@@ -329,7 +331,8 @@ public class BalloonCollision : MonoBehaviour
     }
 
 
-    private void playAudio(AudioClip clip) {
+    private void playAudio(AudioClip clip)
+    {
         audioSource.PlayOneShot(clip, 1f);
     }
 
@@ -341,7 +344,7 @@ public class BalloonCollision : MonoBehaviour
         }
     }
 
-    
+
 }
 
 

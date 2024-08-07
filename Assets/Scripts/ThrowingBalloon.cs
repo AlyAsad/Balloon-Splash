@@ -84,7 +84,7 @@ public class ThrowingBalloon : MonoBehaviour
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90;
         PlayerRigidBody.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward * Time.deltaTime);
     }
-    
+
     void Dragging()
     {
         draggingPos = Camera.main.ScreenToWorldPoint(touch.position);
@@ -125,7 +125,7 @@ public class ThrowingBalloon : MonoBehaviour
             numberOfThrowsForWaterBomb--;
             if (numberOfThrowsForWaterBomb == 0)
             {
-                numberOfThrowsForWaterBomb = 2;
+                numberOfThrowsForWaterBomb = 3;
                 isBomb = false;
             }
         }

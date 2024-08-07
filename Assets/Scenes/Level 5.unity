@@ -1706,6 +1706,7 @@ GameObject:
   - component: {fileID: 786548454}
   - component: {fileID: 786548455}
   - component: {fileID: 786548456}
+  - component: {fileID: 786548457}
   m_Layer: 3
   m_Name: Enemy
   m_TagString: Enemy
@@ -1870,7 +1871,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 786548447}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f6a862049b740474c8077483a8814c04, type: 3}
   m_Name: 
@@ -1894,7 +1895,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 786548447}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3ca300dc251cccb4f870b30edd033d98, type: 3}
   m_Name: 
@@ -2007,6 +2008,31 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &786548457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 786548447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91e17a7f9813d8e429612788308619df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  power: 10
+  maxDrag: 5
+  recoilPercent: 0.2
+  throwPoint: {fileID: 1970988291}
+  enemyBalloonPrefab: {fileID: 1839459383788634413, guid: dd2ff7607c38caa429a96f56c75d2f02, type: 3}
+  enemyRb: {fileID: 786548450}
+  throwingCone: 0
+  maxForce: 15
+  muzzleRecoil: {fileID: 982225545}
+  PlaceToThrow1: {fileID: 218061118}
+  PlaceToThrow2: {fileID: 1474194072}
+  audioSource: {fileID: 786548456}
+  shootingSound: {fileID: 8300000, guid: 21c7a4a0a1f30dd4b9b2d83c88ec683a, type: 3}
 --- !u!1 &833182970
 GameObject:
   m_ObjectHideFlags: 0
@@ -5775,6 +5801,7 @@ GameObject:
   - component: {fileID: 1876462197}
   - component: {fileID: 1876462203}
   - component: {fileID: 1876462204}
+  - component: {fileID: 1876462205}
   m_Layer: 3
   m_Name: Enemy (1)
   m_TagString: Enemy
@@ -5824,7 +5851,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1876462196}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3ca300dc251cccb4f870b30edd033d98, type: 3}
   m_Name: 
@@ -5963,7 +5990,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1876462196}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f6a862049b740474c8077483a8814c04, type: 3}
   m_Name: 
@@ -6076,6 +6103,31 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1876462205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1876462196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91e17a7f9813d8e429612788308619df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  power: 10
+  maxDrag: 5
+  recoilPercent: 0.2
+  throwPoint: {fileID: 302181531}
+  enemyBalloonPrefab: {fileID: 1839459383788634413, guid: dd2ff7607c38caa429a96f56c75d2f02, type: 3}
+  enemyRb: {fileID: 1876462199}
+  throwingCone: 0
+  maxForce: 15
+  muzzleRecoil: {fileID: 1755563390}
+  PlaceToThrow1: {fileID: 735629089}
+  PlaceToThrow2: {fileID: 218061118}
+  audioSource: {fileID: 1876462204}
+  shootingSound: {fileID: 8300000, guid: 21c7a4a0a1f30dd4b9b2d83c88ec683a, type: 3}
 --- !u!1 &1931861389
 GameObject:
   m_ObjectHideFlags: 0
