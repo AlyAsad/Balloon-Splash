@@ -1063,6 +1063,10 @@ PrefabInstance:
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 261815256}
+    - target: {fileID: 6275144999998003958, guid: 818925f5049132f4ab044234c29e93b3, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7303902729833632791, guid: 818925f5049132f4ab044234c29e93b3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.001
@@ -2626,6 +2630,8 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   deathAnimation: {fileID: 1530073134}
   offset: {x: 0, y: 0, z: 0}
+  audioSource: {fileID: 830144005}
+  deathSound: {fileID: 8300000, guid: 071a1a9a578938e408518ea404707ac1, type: 3}
 --- !u!4 &830144004
 Transform:
   m_ObjectHideFlags: 0
@@ -2655,7 +2661,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 21c7a4a0a1f30dd4b9b2d83c88ec683a, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 0.451
   m_Pitch: 1.98

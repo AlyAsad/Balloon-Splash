@@ -913,6 +913,8 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   deathAnimation: {fileID: 867247979}
   offset: {x: 0, y: 0, z: 0}
+  audioSource: {fileID: 192855447}
+  deathSound: {fileID: 8300000, guid: 071a1a9a578938e408518ea404707ac1, type: 3}
 --- !u!4 &192855446
 Transform:
   m_ObjectHideFlags: 0
@@ -944,8 +946,8 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
+  m_Volume: 0.451
+  m_Pitch: 1.98
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -2425,6 +2427,8 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   deathAnimation: {fileID: 1248258664}
   offset: {x: 0, y: 0, z: 0}
+  audioSource: {fileID: 545273450}
+  deathSound: {fileID: 8300000, guid: 071a1a9a578938e408518ea404707ac1, type: 3}
 --- !u!4 &545273449
 Transform:
   m_ObjectHideFlags: 0
@@ -2456,8 +2460,8 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
+  m_Volume: 0.451
+  m_Pitch: 1.98
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -4877,11 +4881,11 @@ PrefabInstance:
       objectReference: {fileID: 1254384598}
     - target: {fileID: 6275144999998003958, guid: 818925f5049132f4ab044234c29e93b3, type: 3}
       propertyPath: m_Pitch
-      value: 0.76
+      value: 1.98
       objectReference: {fileID: 0}
     - target: {fileID: 6275144999998003958, guid: 818925f5049132f4ab044234c29e93b3, type: 3}
       propertyPath: m_Volume
-      value: 1
+      value: 0.451
       objectReference: {fileID: 0}
     - target: {fileID: 6275144999998003958, guid: 818925f5049132f4ab044234c29e93b3, type: 3}
       propertyPath: m_audioClip
@@ -6829,6 +6833,8 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   deathAnimation: {fileID: 267125249}
   offset: {x: 0, y: 0, z: 0}
+  audioSource: {fileID: 1916742790}
+  deathSound: {fileID: 8300000, guid: 071a1a9a578938e408518ea404707ac1, type: 3}
 --- !u!4 &1916742789
 Transform:
   m_ObjectHideFlags: 0
@@ -6860,8 +6866,8 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
+  m_Volume: 0.451
+  m_Pitch: 1.98
   Loop: 0
   Mute: 0
   Spatialize: 0

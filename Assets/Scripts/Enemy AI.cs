@@ -8,6 +8,9 @@ public class EnemyAi : MonoBehaviour
     [SerializeField] EnemyHealthBar healthBar;
     [SerializeField] ParticleSystem deathAnimation;
     [SerializeField] Vector3 offset;
+
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip deathSound;
     bool death = false;
 
 
@@ -46,6 +49,7 @@ public class EnemyAi : MonoBehaviour
     }
     IEnumerator Die()
     {
+        audioSource.PlayOneShot(deathSound);
         deathAnimation.gameObject.SetActive(true);
         deathAnimation.Play();
         yield return new WaitForSeconds(1f);
