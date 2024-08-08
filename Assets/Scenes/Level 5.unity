@@ -1721,8 +1721,6 @@ GameObject:
   - component: {fileID: 786548451}
   - component: {fileID: 786548450}
   - component: {fileID: 786548448}
-  - component: {fileID: 786548454}
-  - component: {fileID: 786548455}
   - component: {fileID: 786548456}
   - component: {fileID: 786548457}
   m_Layer: 3
@@ -1863,8 +1861,8 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   deathAnimation: {fileID: 1622628117}
   offset: {x: 0, y: 0, z: 0}
-  audioSource: {fileID: 0}
-  deathSound: {fileID: 0}
+  audioSource: {fileID: 786548456}
+  deathSound: {fileID: 8300000, guid: 071a1a9a578938e408518ea404707ac1, type: 3}
 --- !u!4 &786548453
 Transform:
   m_ObjectHideFlags: 0
@@ -1884,54 +1882,6 @@ Transform:
   - {fileID: 982225546}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &786548454
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 786548447}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6a862049b740474c8077483a8814c04, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  power: 10
-  maxDrag: 5
-  recoilPercent: 0.2
-  throwPoint: {fileID: 1970988291}
-  enemyBalloonPrefab: {fileID: 1839459383788634413, guid: dd2ff7607c38caa429a96f56c75d2f02, type: 3}
-  enemyRb: {fileID: 786548450}
-  throwingCone: 0
-  maxForce: 15
-  muzzleRecoil: {fileID: 982225545}
-  PlaceToThrow1: {fileID: 1474194072}
-  audioSource: {fileID: 786548456}
-  shootingSound: {fileID: 8300000, guid: 071a1a9a578938e408518ea404707ac1, type: 3}
---- !u!114 &786548455
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 786548447}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ca300dc251cccb4f870b30edd033d98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  power: 10
-  maxDrag: 5
-  recoilPercent: 0.2
-  throwPoint: {fileID: 1970988291}
-  enemyBalloonPrefab: {fileID: 1839459383788634413, guid: dd2ff7607c38caa429a96f56c75d2f02, type: 3}
-  enemyRb: {fileID: 786548450}
-  throwingCone: 0
-  disp: {x: 0, y: 0, z: 0}
-  maxForce: 10
-  muzzleRecoil: {fileID: 982225545}
-  audioSource: {fileID: 786548456}
-  shootingSound: {fileID: 8300000, guid: 21c7a4a0a1f30dd4b9b2d83c88ec683a, type: 3}
 --- !u!82 &786548456
 AudioSource:
   m_ObjectHideFlags: 0
@@ -6239,8 +6189,8 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   deathAnimation: {fileID: 1665968534}
   offset: {x: 0, y: 0, z: 0}
-  audioSource: {fileID: 0}
-  deathSound: {fileID: 0}
+  audioSource: {fileID: 1876462204}
+  deathSound: {fileID: 8300000, guid: 071a1a9a578938e408518ea404707ac1, type: 3}
 --- !u!4 &1876462202
 Transform:
   m_ObjectHideFlags: 0

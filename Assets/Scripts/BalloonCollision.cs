@@ -34,7 +34,7 @@ public class BalloonCollision : MonoBehaviour
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        if (!gameObject.CompareTag("Water_Bomb")) {
+        if (!gameObject.CompareTag("Water_Bomb") && !gameObject.CompareTag("PowerUpWaterBomb")) {
             trail = transform.GetChild(0).gameObject;
         }
     }
