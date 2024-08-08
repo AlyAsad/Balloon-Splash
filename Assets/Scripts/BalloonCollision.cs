@@ -147,6 +147,18 @@ public class BalloonCollision : MonoBehaviour
                 player.increaseHealth();
             }
         }
+
+        if (gameObject.CompareTag("Enemy_Balloon")) {
+            
+            if (other.gameObject.CompareTag("Water_Bomb"))
+            {
+            ParticleSystem enemyBalloonSplashInstance = Instantiate(enemyBalloonSplash, gameObject.transform.position, Quaternion.identity);
+            enemyBalloonSplashInstance.Play();
+            Destroy(enemyBalloonSplashInstance, 1f);
+
+            balloonDestroy();
+            }
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -191,7 +203,7 @@ public class BalloonCollision : MonoBehaviour
             bombDestroy();
 
         }
-        else if (other.gameObject.CompareTag("Enemy_Balloon"))
+        /*else if (other.gameObject.CompareTag("Enemy_Balloon"))
         {
             ParticleSystem waterBombSplashInstance = Instantiate(waterBombSplash, gameObject.transform.position, Quaternion.identity);
             waterBombSplashInstance.Play();
@@ -202,7 +214,7 @@ public class BalloonCollision : MonoBehaviour
             Destroy(waterBombRecoilInstance, 1f);
 
             bombDestroy();
-        }
+        }*/
     }
 
     private void HandlePlayerBalloonCollision(Collision2D other)

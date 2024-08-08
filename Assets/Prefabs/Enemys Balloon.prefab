@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 94856804352910982}
   - component: {fileID: 1100620737749832278}
   - component: {fileID: 3320390482515096744}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: Enemys Balloon
   m_TagString: Enemy_Balloon
   m_Icon: {fileID: 0}
@@ -289,6 +289,8 @@ MonoBehaviour:
   waterBombPrefab: {fileID: 3924599004871305105, guid: 1f46dec5ecd515444b61a77f107f16ce, type: 3}
   splash: {fileID: 8300000, guid: 0fc356f967418854a9509bf4ace74cfc, type: 3}
   bounce: {fileID: 8300000, guid: c4cab884a033b2f4c9a63e5aee629ba8, type: 3}
+  powerup: {fileID: 0}
+  bomb: {fileID: 0}
 --- !u!82 &3320390482515096744
 AudioSource:
   m_ObjectHideFlags: 0
@@ -395,7 +397,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7048567945033715242}
   - component: {fileID: 3541781743133023920}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
