@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip deathSound;
     bool death = false;
+    bool magic = false;
     private void Start()
     {
         healthBar.UpdateHealthBar(health, maxHealth);
@@ -21,8 +22,12 @@ public class Player : MonoBehaviour
     {
         if (death)
         {
-            gameObject.transform.localScale -= new Vector3(0.02f, 0.02f, 0f);
-            if (gameObject.transform.localScale.x <= 0) Destroy(gameObject);
+            if (!magic) gameObject.transform.localScale -= new Vector3(0.02f, 0.02f, 0f);
+            if (gameObject.transform.localScale.x <= 0)
+            {
+                magic = true;
+                Destroy(gameObject, 1.5f);
+            }
         }
     }
 
@@ -40,18 +45,17 @@ public class Player : MonoBehaviour
     }
     IEnumerator Die()
     {
-        if (audioSource != null && deathSound != null)
-        {
-            audioSource.PlayOneShot(deathSound);
-        }
+        audioSource.PlayOneShot(deathSound);
         deathAnimation.gameObject.SetActive(true);
         deathAnimation.Play();
         yield return new WaitForSeconds(1f);
         deathAnimation.Stop();
         deathAnimation.gameObject.SetActive(false);
-        
+
 
     }
+
+
 
     public void increaseHealth()
     {
