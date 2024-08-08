@@ -176,6 +176,8 @@ MonoBehaviour:
   waterBombPrefab: {fileID: 3924599004871305105}
   splash: {fileID: 8300000, guid: 0fc356f967418854a9509bf4ace74cfc, type: 3}
   bounce: {fileID: 8300000, guid: c4cab884a033b2f4c9a63e5aee629ba8, type: 3}
+  powerup: {fileID: 0}
+  bomb: {fileID: 8300000, guid: 93cfa5a980e8f564e84fcaaf4af00d19, type: 3}
 --- !u!82 &1961575524820496853
 AudioSource:
   m_ObjectHideFlags: 0

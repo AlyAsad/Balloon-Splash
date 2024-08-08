@@ -34,7 +34,9 @@ public class BalloonCollision : MonoBehaviour
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        trail = transform.GetChild(0).gameObject;
+        if (!gameObject.CompareTag("Water_Bomb")) {
+            trail = transform.GetChild(0).gameObject;
+        }
     }
 
     private void Update()
@@ -186,7 +188,7 @@ public class BalloonCollision : MonoBehaviour
             waterBombRecoilInstance.Play();
             Destroy(waterBombRecoilInstance, 1f);
 
-            balloonDestroy();
+            bombDestroy();
 
         }
         else if (other.gameObject.CompareTag("Enemy_Balloon"))
@@ -199,7 +201,7 @@ public class BalloonCollision : MonoBehaviour
             waterBombRecoilInstance.Play();
             Destroy(waterBombRecoilInstance, 1f);
 
-            balloonDestroy();
+            bombDestroy();
         }
     }
 
@@ -326,7 +328,6 @@ public class BalloonCollision : MonoBehaviour
         playAudio(bomb);
         GetComponent<CircleCollider2D>().enabled = false;
         GetComponent<SpriteRenderer>().enabled = false;
-        Destroy(trail);
         Destroy(gameObject, 1f);
     }
 

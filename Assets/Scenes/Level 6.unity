@@ -4653,7 +4653,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b8c5ffc85d67b14882800bdb0d81378, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 1
   ways: {fileID: 1014598200}
   wayPoints: []
   waitDuration: 0.5
@@ -5161,7 +5161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b8c5ffc85d67b14882800bdb0d81378, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 1
   ways: {fileID: 1121840673}
   wayPoints: []
   waitDuration: 0.5
