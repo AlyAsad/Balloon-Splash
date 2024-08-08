@@ -3124,6 +3124,8 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   deathAnimation: {fileID: 1532830208}
   offset: {x: 0, y: 0, z: 0}
+  audioSource: {fileID: 1114946549}
+  deathSound: {fileID: 8300000, guid: 071a1a9a578938e408518ea404707ac1, type: 3}
 --- !u!4 &1114946547
 Transform:
   m_ObjectHideFlags: 0
@@ -5517,6 +5519,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5627473003019189249, guid: 818925f5049132f4ab044234c29e93b3, type: 3}
+      propertyPath: deathSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 071a1a9a578938e408518ea404707ac1, type: 3}
+    - target: {fileID: 5627473003019189249, guid: 818925f5049132f4ab044234c29e93b3, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 2030384286}
+    - target: {fileID: 6275144999998003958, guid: 818925f5049132f4ab044234c29e93b3, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7303902729833632791, guid: 818925f5049132f4ab044234c29e93b3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.001
@@ -5577,6 +5591,11 @@ PrefabInstance:
 --- !u!1 &2030384285 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8183623406422037396, guid: 818925f5049132f4ab044234c29e93b3, type: 3}
+  m_PrefabInstance: {fileID: 2030384284}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &2030384286 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 6275144999998003958, guid: 818925f5049132f4ab044234c29e93b3, type: 3}
   m_PrefabInstance: {fileID: 2030384284}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &2032474825
