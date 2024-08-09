@@ -58,7 +58,7 @@ public class LevelSelect : MonoBehaviour
 
     public void BackToMenu()
     {
-        SceneManager.LoadSceneAsync("MainMenu");
+        StartCoroutine(LoadLevelAfterDelay("MainMenu"));
     }
 
     public void GoToLevel1()
@@ -96,4 +96,9 @@ public class LevelSelect : MonoBehaviour
         SceneManager.LoadSceneAsync("Level 7");
     }
     
+
+    IEnumerator LoadLevelAfterDelay(string s) {
+        yield return new WaitForSeconds(0.15f);
+        SceneManager.LoadScene(s);
+    }
 }

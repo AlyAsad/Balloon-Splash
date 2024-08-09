@@ -8,7 +8,6 @@ public class BalloonCollision : MonoBehaviour
     [SerializeField] private float enemyDamage = 2f;
     [SerializeField] private float playerDamage = 1f;
     [SerializeField] private int maxWallBounce = 10;
-    [SerializeField] private float balloonExplosionTime = 10;
     [SerializeField] private float minSpeed = 0.000f;
 
     private int numOfCollisions = 0;

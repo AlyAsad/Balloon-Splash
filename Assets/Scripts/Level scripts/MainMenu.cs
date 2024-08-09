@@ -17,7 +17,7 @@ public class MainMenu : MonoBehaviour
 
     public void LevelSelect()
     {
-        SceneManager.LoadSceneAsync("Level Select");
+        StartCoroutine(LoadLevelAfterDelay("Level Select"));
     }
 
     public void QuitGame()
@@ -39,6 +39,13 @@ public class MainMenu : MonoBehaviour
     public void GoToEbad()
     {
         SceneManager.LoadSceneAsync("Ebad");
+    }
+
+
+
+    IEnumerator LoadLevelAfterDelay(string s) {
+        yield return new WaitForSeconds(0.15f);
+        SceneManager.LoadScene(s);
     }
 }
 

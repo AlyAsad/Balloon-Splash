@@ -14,7 +14,9 @@ public class ButtonSound : MonoBehaviour
 
     public void PlaySound()
     {
-        audioSource.PlayOneShot(buttonClickSound);
+        DontDestroyOnLoad(gameObject);
+        audioSource.time = 0.115f;
+        audioSource.Play();
     }
 }
 
