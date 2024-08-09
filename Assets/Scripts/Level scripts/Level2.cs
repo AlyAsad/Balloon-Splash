@@ -53,5 +53,5 @@ public class Level2 : MonoBehaviour
         PauseMenu.gameIsPaused = true;
     }
 
-
+    
 }

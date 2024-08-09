@@ -11,14 +11,14 @@ public class LevelCompletionMenu : MonoBehaviour
     {
         Time.timeScale = 1f;
         PauseMenu.gameIsPaused = false;
-        SceneManager.LoadSceneAsync("Level " + (levelNumber + 1));
+        StartCoroutine(LoadLevelAfterDelay("Level " + (levelNumber + 1)));
     }
 
     public void Replay()
     {
         Time.timeScale = 1f;
         PauseMenu.gameIsPaused = false;
-        SceneManager.LoadSceneAsync("Level " + levelNumber);
+        StartCoroutine(LoadLevelAfterDelay("Level " + levelNumber));
     }
 
 
@@ -27,6 +27,11 @@ public class LevelCompletionMenu : MonoBehaviour
         
         Time.timeScale = 1f;
         PauseMenu.gameIsPaused = false;
-        SceneManager.LoadSceneAsync("MainMenu");
+        StartCoroutine(LoadLevelAfterDelay("MainMenu"));
+    }
+
+    IEnumerator LoadLevelAfterDelay(string s) {
+        yield return new WaitForSeconds(0.1f);
+        SceneManager.LoadScene(s);
     }
 }

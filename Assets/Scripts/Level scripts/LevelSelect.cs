@@ -63,42 +63,42 @@ public class LevelSelect : MonoBehaviour
 
     public void GoToLevel1()
     {
-        SceneManager.LoadSceneAsync("Level 1");
+        StartCoroutine(LoadLevelAfterDelay("Level 1"));
     }
 
     public void GoToLevel2()
     {
-        SceneManager.LoadSceneAsync("Level 2");
+        StartCoroutine(LoadLevelAfterDelay("Level 2"));
     }
 
     public void GoToLevel3()
     {
-        SceneManager.LoadSceneAsync("Level 3");
+        StartCoroutine(LoadLevelAfterDelay("Level 3"));
     }
 
     public void GoToLevel4()
     {
-        SceneManager.LoadSceneAsync("Level 4");
+        StartCoroutine(LoadLevelAfterDelay("Level 4"));
     }
 
     public void GoToLevel5()
     {
-        SceneManager.LoadSceneAsync("Level 5");
+        StartCoroutine(LoadLevelAfterDelay("Level 5"));
     }
 
     public void GoToLevel6()
     {
-        SceneManager.LoadSceneAsync("Level 6");
+        StartCoroutine(LoadLevelAfterDelay("Level 6"));
     }
 
     public void GoToLevel7()
     {
-        SceneManager.LoadSceneAsync("Level 7");
+        StartCoroutine(LoadLevelAfterDelay("Level 7"));
     }
     
 
     IEnumerator LoadLevelAfterDelay(string s) {
-        yield return new WaitForSeconds(0.15f);
+        yield return new WaitForSeconds(0.1f);
         SceneManager.LoadScene(s);
     }
 }

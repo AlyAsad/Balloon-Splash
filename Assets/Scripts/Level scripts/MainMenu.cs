@@ -12,7 +12,7 @@ public class MainMenu : MonoBehaviour
         currLevel = PlayerPrefs.GetInt("Unlocked Level", 1);
         if (currLevel > 7) currLevel = 7;
 
-        SceneManager.LoadSceneAsync("Level " + currLevel);
+        StartCoroutine(LoadLevelAfterDelay("Level " + currLevel));
     }
 
     public void LevelSelect()
@@ -44,7 +44,7 @@ public class MainMenu : MonoBehaviour
 
 
     IEnumerator LoadLevelAfterDelay(string s) {
-        yield return new WaitForSeconds(0.15f);
+        yield return new WaitForSeconds(0.1f);
         SceneManager.LoadScene(s);
     }
 }
