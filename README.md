@@ -2,7 +2,7 @@
 Hyper-casual game made for Android in Unity by me and my team for Mindstorm Studios internship program.
 
 
-## Why I made the game
+## Why we made the game
 Me and my team participated for the internship/summer program of "Mindstorm Studios" in Pakistan. The goal of the program was to teach us game development and then task us to make a hyper-casual Android game in Unity with "slingshot" mechanics.
 
 
