@@ -11,6 +11,6 @@ Using slingshot mechanic, the player and enemies shoot balloons to damage each o
 
 
 ## How to play the game
-1) Download the APK by [clicking here](https://github.com/AlyAsad/Balloon-Splash/blob/main/Balloon%20Splash.apk).
+1) Download the APK by [clicking here](https://github.com/AlyAsad/Balloon-Splash/releases/download/1.0/Balloon.Splash.apk).
 3) Install the APK.
 4) Enjoy.
